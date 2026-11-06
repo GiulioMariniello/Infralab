@@ -1,0 +1,602 @@
+paper:
+  source_spec: Z-princ.yaml
+  root_seed: 20261007
+  horizon_quarters: 200
+  replicates: 10
+  params:
+    observation_mode: inspected
+    true_reliability_mode: physical
+    rng_streams: keyed
+    failure_model: reliability
+    degradation_pause_on: interventions
+    reliability_projection_years: 1
+    reliability_refresh_every_quarters: 4
+    code_framework: EN1990
+    enforce_guidelines: false
+    bankruptcy_enabled: false
+    capacity_condition_sensitivity: 0.4
+    reliability_resistance_scale: 1.25
+    deterioration_exponent: 4.0
+    traffic_demand_mode: self_designed
+    calibration_profile: fhwa_unit_costs_2025_b
+    network_relevance_mode: nbi_detour
+    detour_accounting: true
+    posting_entry_rate_q: 0.00126
+    initial_inventory_known: true
+    ethical_floor_enabled: true
+    policy_sandbox: true
+    strict_information: true
+    revenue_health_source: assessed
+    planner_information: belief
+    hydraulic_hazard_enabled: true
+    hydraulic_legacy_mode: false
+    impact_hazard_enabled: true
+    fatigue_hazard_enabled: true
+    detour_km_cap: 50.0
+    detour_partial_diversion: trucks
+    detour_works_diversion: false
+    regional_events_enabled: true
+    ethical_floor_condition: 0.0
+    progressive_events_enabled: true
+    hydraulic_collapse_progressive_share: 0.5
+    progressive_hydraulic_duration_mean_q: 20
+    ethical_floor_beta: 3.02
+  agents:
+  - id: do_nothing
+    type: Basic
+    params:
+      policy: do_nothing
+  - id: worst_first
+    type: Basic
+    params:
+      policy: worst_first
+  - id: typical_owner
+    type: Basic
+    params:
+      policy: typical_owner
+paper-short:
+  source_spec: Z-corta.yaml
+  root_seed: 20261901
+  horizon_quarters: 20
+  replicates: 10
+  params:
+    observation_mode: inspected
+    true_reliability_mode: physical
+    rng_streams: keyed
+    failure_model: reliability
+    degradation_pause_on: interventions
+    reliability_projection_years: 1
+    reliability_refresh_every_quarters: 4
+    code_framework: EN1990
+    enforce_guidelines: false
+    bankruptcy_enabled: false
+    capacity_condition_sensitivity: 0.4
+    reliability_resistance_scale: 1.25
+    deterioration_exponent: 4.0
+    traffic_demand_mode: self_designed
+    calibration_profile: fhwa_unit_costs_2025_b
+    network_relevance_mode: nbi_detour
+    detour_accounting: true
+    posting_entry_rate_q: 0.00126
+    initial_inventory_known: true
+    ethical_floor_enabled: true
+    policy_sandbox: true
+    strict_information: true
+    revenue_health_source: assessed
+    planner_information: belief
+    hydraulic_hazard_enabled: true
+    hydraulic_legacy_mode: false
+    impact_hazard_enabled: true
+    fatigue_hazard_enabled: true
+    detour_km_cap: 50.0
+    detour_partial_diversion: trucks
+    detour_works_diversion: false
+    regional_events_enabled: true
+    ethical_floor_condition: 0.0
+    progressive_events_enabled: true
+    hydraulic_collapse_progressive_share: 0.5
+    progressive_hydraulic_duration_mean_q: 20
+    ethical_floor_beta: 3.02
+  agents:
+  - id: do_nothing
+    type: Basic
+    params:
+      policy: do_nothing
+  - id: worst_first
+    type: Basic
+    params:
+      policy: worst_first
+  - id: euristico
+    type: Euristico
+  - id: mcts
+    type: MCTS
+    params:
+      mcts_params:
+        n_rollouts: 30
+        rollout_depth: 4
+        n_candidates: 8
+  - id: qlearning
+    type: RL Q-Learning
+paper-less-optimistic:
+  source_spec: ZT-princ.yaml
+  root_seed: 20261007
+  horizon_quarters: 200
+  replicates: 10
+  params:
+    observation_mode: inspected
+    true_reliability_mode: physical
+    rng_streams: keyed
+    failure_model: reliability
+    degradation_pause_on: interventions
+    reliability_projection_years: 1
+    reliability_refresh_every_quarters: 4
+    code_framework: EN1990
+    enforce_guidelines: false
+    bankruptcy_enabled: false
+    capacity_condition_sensitivity: 0.6
+    reliability_resistance_scale: 1.3
+    deterioration_exponent: 4.0
+    traffic_demand_mode: self_designed
+    calibration_profile: fhwa_unit_costs_2025_b
+    network_relevance_mode: nbi_detour
+    detour_accounting: true
+    posting_entry_rate_q: 0.00126
+    initial_inventory_known: true
+    ethical_floor_enabled: true
+    policy_sandbox: true
+    strict_information: true
+    revenue_health_source: assessed
+    planner_information: belief
+    hydraulic_hazard_enabled: true
+    hydraulic_legacy_mode: false
+    impact_hazard_enabled: true
+    fatigue_hazard_enabled: true
+    detour_km_cap: 50.0
+    detour_partial_diversion: trucks
+    detour_works_diversion: false
+    regional_events_enabled: true
+    ethical_floor_condition: 0.0
+    progressive_events_enabled: true
+    hydraulic_collapse_progressive_share: 0.5
+    progressive_hydraulic_duration_mean_q: 20
+    ethical_floor_beta: 3.02
+  agents:
+  - id: do_nothing
+    type: Basic
+    params:
+      policy: do_nothing
+  - id: worst_first
+    type: Basic
+    params:
+      policy: worst_first
+  - id: typical_owner
+    type: Basic
+    params:
+      policy: typical_owner
+first:
+  source_spec: D-princ.yaml
+  root_seed: 20261007
+  horizon_quarters: 200
+  replicates: 10
+  params:
+    observation_mode: inspected
+    true_reliability_mode: physical
+    rng_streams: keyed
+    failure_model: reliability
+    degradation_pause_on: interventions
+    reliability_projection_years: 1
+    reliability_refresh_every_quarters: 4
+    code_framework: EN1990
+    enforce_guidelines: false
+    bankruptcy_enabled: false
+    capacity_condition_sensitivity: 0.5
+    reliability_resistance_scale: 1.0181
+    deterioration_exponent: 4.0
+    traffic_demand_mode: self_designed
+    calibration_profile: fhwa_unit_costs_2025_b
+    network_relevance_mode: nbi_detour
+    detour_accounting: true
+    posting_entry_rate_q: 0.00126
+    initial_inventory_known: true
+    ethical_floor_enabled: true
+    policy_sandbox: true
+    strict_information: true
+    revenue_health_source: assessed
+    planner_information: belief
+    hydraulic_hazard_enabled: true
+    hydraulic_legacy_mode: false
+    impact_hazard_enabled: true
+    fatigue_hazard_enabled: true
+    detour_km_cap: 50.0
+    detour_partial_diversion: trucks
+    detour_works_diversion: false
+    regional_events_enabled: true
+    ethical_floor_condition: 0.2
+    progressive_events_enabled: true
+    hydraulic_collapse_progressive_share: 0.5
+    progressive_hydraulic_duration_mean_q: 20
+  agents:
+  - id: do_nothing
+    type: Basic
+    params:
+      policy: do_nothing
+  - id: worst_first
+    type: Basic
+    params:
+      policy: worst_first
+  - id: inspect_and_repair
+    type: Basic
+    params:
+      policy: inspect_and_repair
+second:
+  source_spec: G-princ.yaml
+  root_seed: 20261401
+  horizon_quarters: 200
+  replicates: 10
+  params:
+    observation_mode: inspected
+    true_reliability_mode: physical
+    rng_streams: keyed
+    failure_model: reliability
+    degradation_pause_on: interventions
+    reliability_projection_years: 1
+    reliability_refresh_every_quarters: 4
+    code_framework: EN1990
+    enforce_guidelines: false
+    bankruptcy_enabled: false
+    capacity_condition_sensitivity: 0.5
+    reliability_resistance_scale: 1.0181
+    deterioration_exponent: 4.0
+    traffic_demand_mode: self_designed
+    calibration_profile: fhwa_unit_costs_2025_b
+    network_relevance_mode: nbi_detour
+    detour_accounting: true
+    posting_entry_rate_q: 0.001
+    initial_inventory_known: true
+    ethical_floor_enabled: true
+    policy_sandbox: true
+    strict_information: true
+    revenue_health_source: assessed
+    planner_information: belief
+    hydraulic_hazard_enabled: true
+    hydraulic_legacy_mode: false
+    impact_hazard_enabled: true
+    fatigue_hazard_enabled: true
+    detour_km_cap: 50.0
+    detour_partial_diversion: trucks
+    detour_works_diversion: false
+    regional_events_enabled: true
+    ethical_floor_condition: 0.05
+    progressive_events_enabled: true
+    hydraulic_collapse_progressive_share: 0.5
+    progressive_hydraulic_duration_mean_q: 20
+    assessment_epistemic_mode: reference
+    posting_severity_floor: 0.0
+    posting_lift_on_intervention: true
+    temporary_closure_rate_q: 0.0001
+    temporary_closure_condition_rate_q: 0.00016
+    temporary_closure_mean_duration_quarters: 4
+    sudden_custom_events:
+    - name: cedimento_locale
+      rate_q: 0.3
+      targets: impalcato,pile,spalle,appoggi
+      hits: worst
+      drop_dist: lognormal
+      drop_mean: 0.25
+      drop_cov: 0.4
+      announce_prob: 0.3
+      condition_max: 0.39
+      condition_exponent: 7.0
+    - name: danno_locale
+      rate_q: 0.0005
+      targets: impalcato,pile,spalle,appoggi
+      hits: worst
+      drop_dist: lognormal
+      drop_mean: 0.25
+      drop_cov: 0.4
+      announce_prob: 1.0
+  agents:
+  - id: do_nothing
+    type: Basic
+    params:
+      policy: do_nothing
+      params:
+        self_inspect_interval_quarters: 8
+  - id: typical_owner
+    type: Basic
+    params:
+      policy: typical_owner
+      params:
+        self_inspect_interval_quarters: 8
+  - id: inspect_and_repair
+    type: Basic
+    params:
+      policy: inspect_and_repair
+third:
+  source_spec: J-princ.yaml
+  root_seed: 20261701
+  horizon_quarters: 200
+  replicates: 10
+  params:
+    observation_mode: inspected
+    true_reliability_mode: physical
+    rng_streams: keyed
+    failure_model: reliability
+    degradation_pause_on: interventions
+    reliability_projection_years: 1
+    reliability_refresh_every_quarters: 4
+    code_framework: EN1990
+    enforce_guidelines: false
+    bankruptcy_enabled: false
+    capacity_condition_sensitivity: 0.5
+    reliability_resistance_scale: 1.0181
+    deterioration_exponent: 4.0
+    traffic_demand_mode: self_designed
+    calibration_profile: fhwa_unit_costs_2025_b
+    network_relevance_mode: nbi_detour
+    detour_accounting: true
+    posting_entry_rate_q: 0.0025
+    initial_inventory_known: true
+    ethical_floor_enabled: true
+    policy_sandbox: true
+    strict_information: true
+    revenue_health_source: assessed
+    planner_information: belief
+    hydraulic_hazard_enabled: true
+    hydraulic_legacy_mode: false
+    impact_hazard_enabled: true
+    fatigue_hazard_enabled: true
+    detour_km_cap: 50.0
+    detour_partial_diversion: trucks
+    detour_works_diversion: false
+    regional_events_enabled: true
+    ethical_floor_condition: 0.05
+    progressive_events_enabled: true
+    hydraulic_collapse_progressive_share: 0.5
+    progressive_hydraulic_duration_mean_q: 20
+    assessment_epistemic_mode: reference
+    posting_severity_floor: 0.0
+    posting_lift_on_intervention: true
+    temporary_closure_rate_q: 0.001
+    temporary_closure_condition_rate_q: 0.00016
+    temporary_closure_mean_duration_quarters: 4
+    sudden_custom_events:
+    - name: cedimento_locale
+      rate_q: 0.3
+      targets: impalcato,pile,spalle,appoggi
+      hits: worst
+      drop_dist: lognormal
+      drop_mean: 0.25
+      drop_cov: 0.4
+      announce_prob: 0.3
+      condition_max: 0.39
+      condition_exponent: 7.0
+    - name: danno_locale
+      rate_q: 0.0005
+      targets: impalcato,pile,spalle,appoggi
+      hits: worst
+      drop_dist: lognormal
+      drop_mean: 0.25
+      drop_cov: 0.4
+      announce_prob: 1.0
+  agents:
+  - id: do_nothing
+    type: Basic
+    params:
+      policy: do_nothing
+      params:
+        self_inspect_interval_quarters: 8
+  - id: typical_owner
+    type: Basic
+    params:
+      policy: typical_owner
+      params:
+        self_inspect_interval_quarters: 8
+        annual_rate_by_rating:
+          '0': 0.17
+          '1': 0.17
+          '2': 0.17
+          '3': 0.222
+          '4': 0.156
+          '5': 0.105
+          '6': 0.027
+          '7': 0.0
+          '8': 0.0
+          '9': 0.0
+reduced:
+  source_spec: N-giocatori.yaml
+  root_seed: 20261901
+  horizon_quarters: 40
+  replicates: 1
+  params:
+    observation_mode: inspected
+    true_reliability_mode: physical
+    rng_streams: keyed
+    failure_model: reliability
+    degradation_pause_on: interventions
+    reliability_projection_years: 1
+    reliability_refresh_every_quarters: 4
+    code_framework: EN1990
+    enforce_guidelines: false
+    bankruptcy_enabled: false
+    capacity_condition_sensitivity: 0.5
+    reliability_resistance_scale: 1.0181
+    deterioration_exponent: 4.0
+    traffic_demand_mode: self_designed
+    calibration_profile: fhwa_unit_costs_2025_b
+    network_relevance_mode: nbi_detour
+    detour_accounting: true
+    posting_entry_rate_q: 0.00126
+    initial_inventory_known: true
+    ethical_floor_enabled: true
+    policy_sandbox: true
+    strict_information: true
+    revenue_health_source: assessed
+    planner_information: belief
+    hydraulic_hazard_enabled: true
+    hydraulic_legacy_mode: false
+    impact_hazard_enabled: true
+    fatigue_hazard_enabled: true
+    detour_km_cap: 50.0
+    detour_partial_diversion: trucks
+    detour_works_diversion: false
+    regional_events_enabled: true
+    ethical_floor_condition: 0.2
+    progressive_events_enabled: true
+    hydraulic_collapse_progressive_share: 0.5
+    progressive_hydraulic_duration_mean_q: 20
+  agents:
+  - id: do_nothing
+    type: Basic
+    params:
+      policy: do_nothing
+  - id: worst_first
+    type: Basic
+    params:
+      policy: worst_first
+  - id: euristico
+    type: Euristico
+  - id: mcts
+    type: MCTS
+    params:
+      mcts_params:
+        n_rollouts: 30
+        rollout_depth: 4
+        n_candidates: 8
+  - id: ga
+    type: GA Orizzonte Variabile
+  - id: memetico
+    type: Algoritmo Memetico
+  - id: qlearning
+    type: RL Q-Learning
+  - id: llm
+    type: LLM
+    params:
+      provider: OpenAI
+      profile: Bilanciato
+      model: gpt-4.1-mini
+  - id: llm_agentico
+    type: LLM Agentico
+    params:
+      provider: OpenAI
+      profile: Bilanciato
+      max_rounds: 3
+calibrated:
+  source_spec: W-princ.yaml
+  root_seed: 20261007
+  horizon_quarters: 200
+  replicates: 10
+  params:
+    observation_mode: inspected
+    true_reliability_mode: physical
+    rng_streams: keyed
+    failure_model: reliability
+    degradation_pause_on: interventions
+    reliability_projection_years: 1
+    reliability_refresh_every_quarters: 4
+    code_framework: EN1990
+    enforce_guidelines: false
+    bankruptcy_enabled: false
+    capacity_condition_sensitivity: 0.3
+    reliability_resistance_scale: 1.15
+    deterioration_exponent: 4.0
+    traffic_demand_mode: self_designed
+    calibration_profile: fhwa_unit_costs_2025_b
+    network_relevance_mode: nbi_detour
+    detour_accounting: true
+    posting_entry_rate_q: 0.00126
+    initial_inventory_known: true
+    ethical_floor_enabled: true
+    policy_sandbox: true
+    strict_information: true
+    revenue_health_source: assessed
+    planner_information: belief
+    hydraulic_hazard_enabled: true
+    hydraulic_legacy_mode: false
+    impact_hazard_enabled: true
+    fatigue_hazard_enabled: true
+    detour_km_cap: 50.0
+    detour_partial_diversion: trucks
+    detour_works_diversion: false
+    regional_events_enabled: true
+    ethical_floor_condition: 0.0
+    progressive_events_enabled: true
+    hydraulic_collapse_progressive_share: 0.5
+    progressive_hydraulic_duration_mean_q: 20
+    ethical_floor_beta: 3.66
+  agents:
+  - id: do_nothing
+    type: Basic
+    params:
+      policy: do_nothing
+  - id: worst_first
+    type: Basic
+    params:
+      policy: worst_first
+  - id: typical_owner
+    type: Basic
+    params:
+      policy: typical_owner
+calibrated-short:
+  source_spec: W-corta.yaml
+  root_seed: 20261901
+  horizon_quarters: 20
+  replicates: 10
+  params:
+    observation_mode: inspected
+    true_reliability_mode: physical
+    rng_streams: keyed
+    failure_model: reliability
+    degradation_pause_on: interventions
+    reliability_projection_years: 1
+    reliability_refresh_every_quarters: 4
+    code_framework: EN1990
+    enforce_guidelines: false
+    bankruptcy_enabled: false
+    capacity_condition_sensitivity: 0.3
+    reliability_resistance_scale: 1.15
+    deterioration_exponent: 4.0
+    traffic_demand_mode: self_designed
+    calibration_profile: fhwa_unit_costs_2025_b
+    network_relevance_mode: nbi_detour
+    detour_accounting: true
+    posting_entry_rate_q: 0.00126
+    initial_inventory_known: true
+    ethical_floor_enabled: true
+    policy_sandbox: true
+    strict_information: true
+    revenue_health_source: assessed
+    planner_information: belief
+    hydraulic_hazard_enabled: true
+    hydraulic_legacy_mode: false
+    impact_hazard_enabled: true
+    fatigue_hazard_enabled: true
+    detour_km_cap: 50.0
+    detour_partial_diversion: trucks
+    detour_works_diversion: false
+    regional_events_enabled: true
+    ethical_floor_condition: 0.0
+    progressive_events_enabled: true
+    hydraulic_collapse_progressive_share: 0.5
+    progressive_hydraulic_duration_mean_q: 20
+    ethical_floor_beta: 3.66
+  agents:
+  - id: do_nothing
+    type: Basic
+    params:
+      policy: do_nothing
+  - id: worst_first
+    type: Basic
+    params:
+      policy: worst_first
+  - id: euristico
+    type: Euristico
+  - id: mcts
+    type: MCTS
+    params:
+      mcts_params:
+        n_rollouts: 30
+        rollout_depth: 4
+        n_candidates: 8
+  - id: qlearning
+    type: RL Q-Learning

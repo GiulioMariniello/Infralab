@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments
+venv/
+.venv/
+
+# Runtime data (sessions, free play, runtime scenario copy) — SOLO top-level,
+# non il package infralab/data/ (importer NBI/Excel, versionato).
+/data/
+
+# Experiment outputs (root only; paper_materials/results/ archived in git)
+/results/
+
+# Report render artifacts
+*_render/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Office lock files
+~$*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Secrets
+.streamlit/secrets.toml
+
+# Frontend build
+frontend/node_modules/
+frontend/dist/
+data_sources/nbi_panel/

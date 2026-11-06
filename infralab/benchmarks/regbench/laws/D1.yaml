@@ -1,0 +1,24 @@
+id: regbench_D1_periodica
+display_name: Mandatory periodic inspection, intervals graded by attention class
+source: infralab-regbench, campagna dimostrativa D (2026-10-06)
+obligations:
+- trigger: inspection_overdue
+  action: L1_inspect
+enforcement:
+  mode: forced
+hypothetical: true
+param_overrides:
+  inspection_overdue_grace_quarters: 0
+  l4_escalation_quarters: 0
+  forced_funding: owner_budget
+  annual_budget_grant_fraction: 0.0
+cda_config:
+  bassa_threshold: 0.85
+  bassa_due_quarters: 8
+  medio_bassa_threshold: 0.75
+  medio_bassa_due_quarters: 6
+  media_threshold: 0.62
+  media_due_quarters: 4
+  medio_alta_threshold: 0.5
+  medio_alta_due_quarters: 2
+  alta_due_quarters: 2

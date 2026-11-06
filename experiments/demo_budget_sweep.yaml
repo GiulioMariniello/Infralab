@@ -1,0 +1,16 @@
+# Campagna dimostrativa: agente euristico su EXP-A-BUDGET con sweep del
+# degrado ambientale. Esegui con:
+#   python -m infralab.lab run experiments/demo_budget_sweep.yaml
+name: demo-budget-sweep
+scenario: EXP-A-BUDGET
+horizon_quarters: 20
+agents:
+  - id: heuristic
+    type: Euristico
+grid:
+  params.env_degradation_std: [0.08, 0.12, 0.16]
+replicates: 5
+seed: 20260702
+outputs:
+  dir: results/demo_budget_sweep
+  formats: [csv, parquet]

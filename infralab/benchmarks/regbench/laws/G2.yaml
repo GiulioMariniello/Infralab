@@ -1,0 +1,37 @@
+id: regbench_G2_post_evento
+display_name: Pratica dei gestori + ispezione straordinaria dopo un evento
+source: infralab-regbench, campagna G (2026-10-09)
+obligations:
+- trigger: pf_above_threshold
+  threshold: 0.000131120154420461
+  action: ripristino_strutturale
+  enforcement: sanction
+- trigger: regional_event_in_area
+  action: L2_inspect
+  grace_quarters: 1
+  enforcement: forced
+enforcement:
+  mode: sanction
+  lift_on_compliance: true
+  closure_condition_threshold: 0.1
+  sanction_ladder:
+  - after_quarters: 1
+    action: limitazione_carico
+  - after_quarters: 1
+    action: chiusura_ponte
+hypothetical: true
+param_overrides:
+  inspection_overdue_grace_quarters: 0
+  l4_escalation_quarters: 0
+  forced_funding: owner_budget
+  annual_budget_grant_fraction: 0.0
+cda_config:
+  bassa_threshold: 0.85
+  bassa_due_quarters: 8
+  medio_bassa_threshold: 0.75
+  medio_bassa_due_quarters: 6
+  media_threshold: 0.62
+  media_due_quarters: 4
+  medio_alta_threshold: 0.5
+  medio_alta_due_quarters: 2
+  alta_due_quarters: 2

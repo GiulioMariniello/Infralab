@@ -1,0 +1,25 @@
+# Linee Guida Ponti 2020 con SANZIONE progressiva: se l'obbligo non e' assolto,
+# l'autorita' impone limitazione di carico, poi senso unico alternato, poi
+# chiusura, finche' il gestore non esegue l'azione dovuta. Le azioni del gestore
+# che rimuovono la misura (riapertura) sono rifiutate mentre la sanzione e' attiva.
+id: it_lg2020_sanctioned
+display_name: "Linee Guida Ponti 2020 - sanzione progressiva"
+source: "DM MIT 578/2020; misure operative art. 6 LLGG (scala sanzionatoria modellata)"
+target_tier: null
+obligations:
+  - {trigger: inspection_overdue, action: L1_inspect}
+  - {trigger: l4_escalation_overdue, action: L4_verify}
+enforcement:
+  mode: sanction
+  sanction_ladder:
+    - {after_quarters: 1, action: limitazione_carico}
+    - {after_quarters: 3, action: senso_unico_alternato}
+    - {after_quarters: 6, action: chiusura_ponte}
+  lift_on_compliance: true
+information:
+  census_required: false
+resources:
+  earmarked_fraction: 0.0
+param_overrides:
+  l4_escalation_quarters: 4
+  inspection_overdue_grace_quarters: 2

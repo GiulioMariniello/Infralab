@@ -1,0 +1,20 @@
+# Linee Guida Ponti 2020 (DM 578/2020, consolidate 2022): obblighi ispettivi per
+# Classe di Attenzione ed escalation L4, ma SENZA enforcement: l'inadempienza e'
+# solo segnalata (osservazione + KPI). E' il regime "informativo" con cui il
+# motore ha girato finora quando i flag Linee Guida erano attivi.
+id: it_lg2020_signal
+display_name: "Linee Guida Ponti 2020 - solo segnale"
+source: "DM MIT 578/2020; Istruzioni operative ANSFISA; ReLUIS sperimentazione LLGG"
+target_tier: null
+obligations:
+  - {trigger: inspection_overdue, action: L1_inspect}
+  - {trigger: l4_escalation_overdue, action: L4_verify}
+enforcement:
+  mode: none
+information:
+  census_required: false
+resources:
+  earmarked_fraction: 0.0
+param_overrides:
+  l4_escalation_quarters: 4
+  inspection_overdue_grace_quarters: 2

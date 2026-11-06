@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "infralab"
+dynamic = ["version"]
+description = "Open library for bridge management: exchangeable stocks, degradation laws, regulations and players, compared on common random numbers."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "Giulio Mariniello" }]
+keywords = ["bridge management", "infrastructure", "benchmark", "regulation", "reinforcement learning", "MCP", "language-model agents"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.14",
+    "pandas>=2.2",
+    "PyYAML>=6.0",
+    "filelock>=3.13",
+]
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.2"]  # 1.x and 2.x are both supported
+anthropic = ["anthropic>=0.60"]
+openai = ["openai>=1.40"]
+llm = ["anthropic>=0.60", "openai>=1.40", "google-generativeai>=0.8", "huggingface_hub>=0.28"]
+web = ["fastapi>=0.110", "uvicorn[standard]>=0.27", "streamlit>=1.40", "plotly>=5", "matplotlib>=3.8", "seaborn>=0.13", "openpyxl>=3.1", "XlsxWriter>=3.2", "pyarrow>=15"]
+dev = ["pytest>=8", "pytest-timeout>=2.3"]
+
+[project.scripts]
+infralab = "infralab.cli:main"
+infralab-mcp = "infralab.mcp_server:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "infralab.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["infralab*"]
+
+[tool.setuptools.package-data]
+infralab = ["benchmarks/*.json", "benchmarks/regbench/*.yaml", "benchmarks/regbench/scenarios/*.json", "benchmarks/regbench/laws/*.yaml", "benchmarks/regbench/degradation/*.py", "regimes/builtin/*.yaml"]

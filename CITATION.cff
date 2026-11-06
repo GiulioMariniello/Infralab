@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use InfraLab, please cite it as below."
+title: "InfraLab: open library for bridge management with exchangeable degradation laws and regulations"
+type: software
+authors:
+  - family-names: Mariniello
+    given-names: Giulio
+version: 1.0.0
+date-released: 2026-11-07
+license: MIT
+keywords:
+  - bridge management
+  - degradation model
+  - machine-readable regulation
+  - common random numbers
+  - reproducible simulation

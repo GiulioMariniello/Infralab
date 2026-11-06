@@ -1,0 +1,727 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Encoding & language ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+% --- Typography ---
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=2.5cm, top=3cm, bottom=3cm}
+
+% --- Math ---
+\usepackage{amsmath,amssymb}
+
+% --- Tables ---
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+
+% --- Graphics & colour ---
+\usepackage{xcolor}
+\definecolor{uniblu}{RGB}{0,119,200}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{darkgray}{RGB}{60,60,60}
+
+% --- Hyperlinks ---
+\usepackage[colorlinks=true, linkcolor=uniblu, urlcolor=uniblu, citecolor=uniblu]{hyperref}
+
+% --- Code listings ---
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{lightgray},
+  frame=single,
+  framerule=0.4pt,
+  rulecolor=\color{gray},
+  breaklines=true,
+  breakatwhitespace=false,
+  columns=fullflexible,
+  keepspaces=true,
+  xleftmargin=1em,
+  xrightmargin=1em,
+  aboveskip=0.5em,
+  belowskip=0.5em,
+}
+
+% --- Section styling ---
+\usepackage{titlesec}
+\titleformat{\section}[block]
+  {\large\bfseries\color{uniblu}}{\thesection}{0.8em}{}[\titlerule]
+\titleformat{\subsection}[block]
+  {\normalsize\bfseries\color{darkgray}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}[block]
+  {\normalsize\itshape\color{darkgray}}{\thesubsubsection}{0.6em}{}
+
+% --- Header / Footer ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gray}BridgeManager 2025 --- Rapporto Tecnico del Modello}
+\fancyhead[R]{\small\color{gray}\thepage}
+\fancyfoot[C]{\small\color{gray}Giulio Mariniello --- Universit\`a degli Studi di Napoli Federico II}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- Misc ---
+\usepackage{parskip}
+\setlength{\parskip}{6pt}
+\usepackage{enumitem}
+\setlist{itemsep=2pt, topsep=4pt}
+
+% ======================================================
+\begin{document}
+
+% --- Title page ---
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\color{uniblu}\rule{\linewidth}{2pt}}\\[1em]
+  {\Huge\bfseries BridgeManager 2025}\\[0.4em]
+  {\Large Rapporto Tecnico del Modello di Simulazione}\\[1em]
+  {\color{uniblu}\rule{\linewidth}{1pt}}\\[2em]
+  {\large Giulio Mariniello}\\[0.3em]
+  {\normalsize Universit\`a degli Studi di Napoli Federico II\\
+  Dipartimento di Strutture per l'Ingegneria e l'Architettura}\\[3em]
+  {\normalsize
+    \textbf{Versione:} 2025\\[0.3em]
+    \textbf{Data:} 16 maggio 2026\\[0.3em]
+    \textbf{Piattaforma:} Streamlit + Docker su Hugging Face Spaces\\[0.3em]
+    \textbf{Riferimenti normativi principali:} EN 1990, EN 1991-2, JCSS PMC (2001), NTC 2018,\\
+    MIT Linee Guida Ponti (2020)
+  }\\[3em]
+  \vfill
+  {\small\color{gray}Documento generato automaticamente da Claude Code --- Anthropic}
+\end{titlepage}
+
+% --- ToC ---
+\tableofcontents
+\newpage
+
+% ======================================================
+\section{Architettura Generale}
+
+Il simulatore modella la gestione di un portafoglio di ponti su un orizzonte temporale discretizzato in \textbf{trimestri} (un passo = 3 mesi). Ogni trimestre, un agente (umano o algoritmico) osserva lo stato dei propri ponti e pianifica interventi. L'ambiente avanza deterministicamente la fisica del degrado, applica le azioni pianificate, aggiorna l'affidabilit\`a strutturale, calcola i flussi economici e verifica le condizioni di fine-partita.
+
+La sequenza di operazioni per ogni turno $t$ \`e:
+
+\begin{enumerate}
+  \item Completamento interventi scaduti (applicazione dei \textit{gain} ai componenti)
+  \item Raccolta dei piani degli agenti
+  \item Esecuzione delle azioni (analisi / monitoraggio / interventi / proof load)
+  \item Degrado stocastico dei componenti non in manutenzione
+  \item Aggiornamento previsioni di degrado per i ponti in monitoraggio attivo
+  \item Evento sismico stocastico (se abilitato)
+  \item Maturazione interessi sul budget + incassi trimestrali
+  \item Verifica condizioni di fallimento (crollo strutturale o bancarotta)
+  \item Aggiornamento affidabilit\`a di rete $\rightarrow$ \texttt{quarter} $+= 1$
+\end{enumerate}
+
+I dati di stato vengono serializzati in \texttt{game\_state.json} ad ogni turno; i log storici (azioni, budget, KPI) vengono aggiunti ai rispettivi file CSV di sessione.
+
+% ======================================================
+\section{Modello di Degrado dei Componenti}
+
+\subsection{Struttura di un Componente}
+
+Ogni ponte \`e composto da 4 \textbf{componenti strutturali}: \texttt{impalcato}, \texttt{pile}, \texttt{spalle}, \texttt{appoggi}. Ogni componente \`e descritto dai seguenti attributi:
+
+\begin{center}
+\begin{tabular}{lp{9cm}}
+\toprule
+\textbf{Attributo} & \textbf{Significato} \\
+\midrule
+\texttt{current\_condition} $\in [0,1]$ & Condizione strutturale reale (0~=~collasso, 1~=~perfetto) \\
+\texttt{effective\_age\_years} & Et\`a efficace (aumenta in base a traffico, ambiente, stocasticit\`a) \\
+\texttt{vita\_utile\_anni} & Vita utile nominale del componente (variabile casuale $\sim \mathcal{N}(L,\; 0.10\,L)$) \\
+\texttt{epistemic\_uncertainty} $\in [0.03, 0.40]$ & Incertezza epistemica sulla resistenza \\
+\texttt{observed\_condition\_min/max} & Intervallo di confidenza post-ispezione (\texttt{None} se mai ispezionato) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Legge di Degrado (Funzione di Sopravvivenza Weibull)}
+
+La condizione di un componente all'et\`a efficace $t$ \`e:
+
+\begin{equation}
+  C(t) = \exp\!\left[-\lambda \left(\frac{t}{L}\right)^k\right]
+\end{equation}
+
+dove:
+\begin{itemize}
+  \item $L$ = vita utile del componente (anni)
+  \item $k = \text{exponent} \times \text{shape\_factor}$ (esponente di Weibull, tipicamente $k \approx 3.0 \times 1.05 \div 1.35$)
+  \item $\lambda$ = scala di degrado, campionata come $\lambda \sim \mathcal{N}(\mu_\lambda, 0.10)$, con $\lambda \geq 0.30$
+\end{itemize}
+
+I parametri nominali per ciascun componente (\texttt{COMPONENT\_PROFILES}) sono:
+
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Componente} & \textbf{shape\_factor} & \textbf{scale\_mean} & \textbf{traffic\_sens} & \textbf{env\_sens} \\
+\midrule
+impalcato & 1.05 & 0.95 & 0.95 & 0.85 \\
+pile      & 1.20 & 1.10 & 0.70 & 0.95 \\
+spalle    & 1.10 & 1.00 & 0.60 & 1.00 \\
+appoggi   & 1.35 & 1.12 & 0.75 & 1.10 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Tutti i parametri sono campionati da distribuzioni normali con la media del profilo e $\sigma \approx 0.05\div0.10$, garantendo eterogeneità tra ponti diversi.
+
+\subsection{Avanzamento dell'Età Efficace per Turno}
+
+Ogni trimestre, per i componenti non in manutenzione attiva, l'età efficace avanza di:
+
+\begin{equation}
+  \Delta t_{\text{eff}} = 0.25 \cdot \tau_{\text{traf}}^{\alpha_{\text{traf}}}
+                         \cdot E_{\text{env}}^{\alpha_{\text{env}}}
+                         \cdot P_{\text{proc}}
+\end{equation}
+
+dove:
+\begin{itemize}
+  \item $\tau_{\text{traf}} = 1 + k_{\text{traf}} \cdot \dfrac{\text{ADT}}{\text{ADT}_{\text{ref}}}$ \quad (moltiplicatore traffico; default $k_{\text{traf}} = 0.05$, $\text{ADT}_{\text{ref}} = 10\,000$ veh/giorno)
+  \item $E_{\text{env}} \sim \mathcal{N}(1.0,\; 0.10)$ \quad (fattore ambientale stocastico, campionato una volta per turno, condiviso da tutti i ponti)
+  \item $P_{\text{proc}} \sim \text{LogN}(0,\; \sigma_{\text{proc}})$ \quad (processo stocastico per componente; $\sigma_{\text{proc}} = 0.12$, clampato $\geq 0.35$)
+  \item $\alpha_{\text{traf}}$, $\alpha_{\text{env}}$ = \texttt{traffic\_sensitivity} e \texttt{environment\_sensitivity} del componente
+\end{itemize}
+
+Questo approccio cattura: (a) l'accelerazione del degrado per alto traffico, (b) la correlazione parziale tra ponti tramite il fattore ambientale condiviso, (c) la variabilità idiosincratica per componente tramite il moltiplicatore lognormale di processo.
+
+\subsection{Aggiornamento della Condizione dopo Intervento}
+
+Quando un intervento termina, ogni componente target riceve un \textit{gain} $g \sim \mathcal{N}(g_{\text{nom}},\; \sigma_g)$, clampato a $g \geq 0$:
+
+\begin{itemize}
+  \item Se $g \geq 1.0$ (sostituzione completa): $C \leftarrow 1.0$, $t_{\text{eff}} \leftarrow 0$
+  \item Altrimenti: $C \leftarrow \min(1.0,\; C + g)$, poi inversione della legge di Weibull:
+  \begin{equation}
+    t_{\text{eff}} = L \cdot \left(\frac{-\ln C}{\lambda}\right)^{1/k}
+  \end{equation}
+\end{itemize}
+
+Dopo ogni intervento: $\varepsilon \leftarrow \max(0.06,\; \varepsilon \times 0.90)$ (riduzione del 10\% dell'incertezza epistemica).
+
+\subsection{Aumento dell'Incertezza Epistemica con il Tempo}
+
+Ogni trimestre senza ispezione:
+\begin{equation}
+  \varepsilon \leftarrow \min(0.40,\; \varepsilon \times 1.01)
+\end{equation}
+Simula il progressivo deterioramento della conoscenza in assenza di monitoraggio.
+
+% ======================================================
+\section{Modello di Affidabilità Strutturale}
+
+\subsection{Gerarchia di Valutazione}
+
+Per ogni componente vengono valutati \textbf{3 stati limite}:
+
+\begin{center}
+\begin{tabular}{lcl}
+\toprule
+\textbf{Stato Limite} & \textbf{Categoria} & \textbf{Modalità di Rottura} \\
+\midrule
+Flessione (\textit{flexure}) & ULS & Duttile \\
+Taglio (\textit{shear})      & ULS & Fragile \\
+Fessurazione (\textit{cracking}) & SLS & Servizio \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+I risultati ULS di ogni componente vengono combinati in \textbf{serie} per ottenere l'affidabilità del componente. I risultati di tutti i componenti strutturali del ponte vengono a loro volta combinati in serie per ottenere l'affidabilità del ponte.
+
+\subsection{Variabili Aleatorie}
+
+Per ogni stato limite vengono campionati $N$ (default $N=256$) vettori di variabili aleatorie:
+
+\begin{align}
+  R_i &= R_{\mu} \cdot \xi_{\text{mat}} \cdot \xi_{\text{geom}} \cdot \theta_R \\
+  S_i &= \theta_S \cdot (G_i + Q_i)
+\end{align}
+
+dove:
+\begin{itemize}
+  \item $\xi_{\text{mat}} \sim \text{LogN}(1, v_m)$ --- incertezza sul materiale
+  \item $\xi_{\text{geom}} \sim \text{LogN}(1, v_g)$ --- incertezza geometrica
+  \item $\theta_R \sim \text{LogN}(1, v_{\text{mod},R})$ --- incertezza di modello sulla resistenza
+  \item $\theta_S \sim \text{LogN}(1, v_{\text{mod},S})$ --- incertezza di modello sulla domanda
+  \item $G \sim \mathcal{N}(\mu_G, v_G)$ --- carico permanente (normale)
+  \item $Q \sim \text{Gumbel}(\mu_Q, v_Q)$ --- carico variabile (Gumbel)
+\end{itemize}
+
+\subsection{Resistenza Media}
+
+\begin{equation}
+  R_{\mu} = \xi_{\text{bias}} \cdot \max(C,\; 0.02) \cdot \bigl(2.24 + 0.20 \cdot (1 - \varepsilon)\bigr)
+\end{equation}
+
+Il fattore $2.24$ \`e il bias nominale (da calibrare su dati AINOP/JCSS). Le varianti per stato limite sono:
+\begin{itemize}
+  \item Flessione: $R_{\mu} \times 1.08$
+  \item Taglio: $R_{\mu} \times (0.92 + 0.06 \cdot \alpha_{\text{traf}})$
+  \item Fessurazione: $R_{\mu} \times \xi_{\text{crack}} \times 0.76$
+\end{itemize}
+
+\subsection{COV delle Distribuzioni}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Parametro} & \textbf{Formula} \\
+\midrule
+$v_m$ (materiale) & $\min(0.24,\; 0.04 + 0.40 v_{\text{res}} + 0.05(1-C))$ \\
+$v_g$ (geometria) & $\min(0.10,\; v_{g,\text{base}} \cdot (1 + 0.12 \cdot k_{\text{shape}}))$ \\
+$v_{\text{mod},R}$ (modello resistenza) & $\min(0.16,\; v_{\text{mod}} \cdot (1 + 0.75\varepsilon))$ \\
+$v_{\text{mod},S}$ (modello domanda) & $\min(0.14,\; 0.04 + 0.30 v_{\text{demand}} + 0.05\varepsilon)$ \\
+$v_G$ (carico permanente) & $\min(0.08,\; \max(0.05,\; v_{\text{demand}} \cdot 0.50))$ \\
+$v_Q$ (carico variabile) & $\min(0.18,\; \max(v_{\text{demand}},\; 0.04 + 0.22\beta_{\eta} + 0.06(1-C)))$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Stima FOSM dai Momenti Campionari}
+
+Per evitare l'instabilità del conteggio diretto dei fallimenti a $N$ piccolo (che restituisce 0 eventi per $\beta > 3$ nel 97\% dei campioni con $N=256$), si usa la formula \textbf{FOSM lognormale} applicata ai momenti campionari di $R$ e $S$:
+
+\begin{align}
+  \sigma_{\ln R} &= \sqrt{\ln(1 + \text{COV}_R^2)} \\
+  \sigma_{\ln S} &= \sqrt{\ln(1 + \text{COV}_S^2)} \\
+  \beta_{\text{ann}} &= \frac{\ln(\mu_R / \mu_S)}{\sqrt{\sigma_{\ln R}^2 + \sigma_{\ln S}^2}}
+\end{align}
+
+Questa formulazione \`e equivalente all'approccio FOSM standard (Hasofer-Lind per variabili lognormali) ma usa momenti stimati dai campioni, garantendo stabilit\`a per qualsiasi valore di $\beta$ e $N$.
+
+\subsection{Probabilità di Fallimento e Periodo di Riferimento}
+
+Per un singolo stato limite con $\beta_{\text{ann}}$ annuale:
+\begin{equation}
+  p_{f,\text{ann}} = \Phi(-\beta_{\text{ann}})
+\end{equation}
+
+La probabilità cumulata su periodo di riferimento $T$ (stazionaria):
+\begin{equation}
+  p_{f,T} = 1 - (1 - p_{f,\text{ann}})^T
+  \qquad
+  \beta_T = -\Phi^{-1}(p_{f,T})
+\end{equation}
+
+Per la valutazione \textbf{non-stazionaria} (affidabilità del ciclo di vita), si proietta il profilo anno per anno per i prossimi $T_{\text{proj}}$ anni e si calcola:
+\begin{equation}
+  p_{f,TV} = 1 - \prod_{t=1}^{T_{\text{proj}}} \bigl[1 - p_{f,\text{ann}}(t)\bigr]
+\end{equation}
+in accordo con Rackwitz (2001) e Frangopol et al.\ (2004). Questo valore viene usato come \texttt{bridge.failure\_probability}.
+
+\subsection{Target di Affidabilità (JCSS PMC / EN 1990)}
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Classe di Conseguenza} & $\beta_{\text{rif}}$ ($T=50$ anni) & $\beta_{\text{ann}}$ (derivato) & $p_{f,\text{ann}}$ \\
+\midrule
+CC1 & 3.3 & 4.2 & $1.3 \times 10^{-5}$ \\
+CC2 (default) & 3.8 & 4.7 & $1.3 \times 10^{-6}$ \\
+CC3 & 4.3 & 5.2 & $1.0 \times 10^{-7}$ \\
+\midrule
+SLS (tutti) & 1.5 & --- & --- \\
+ULS fragile ($+\Delta\beta$) & $\beta_{\text{CC}} + 0.30$ & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Combinazione a Sistema in Serie}
+
+Sotto l'ipotesi di indipendenza (conservativa per componenti positivamente correlati):
+
+\begin{equation}
+  p_{f,\text{sistema}} = 1 - \prod_i (1 - p_{f,i})
+\end{equation}
+
+Applicata prima ai 3 stati limite del componente, poi ai componenti strutturali del ponte, con l'eventuale aggiunta della componente sismica \texttt{extra\_annual\_pf}.
+
+% ======================================================
+\section{Modello Informativo: Ispezioni e Incertezza Epistemica}
+
+\subsection{Osservazione della Condizione}
+
+Un'ispezione genera un'osservazione rumorosa della condizione reale:
+
+\begin{equation}
+  \sigma_{\text{obs}} = \max(0.005,\; \sigma_{\text{base}} \cdot (0.65 + \varepsilon))
+\end{equation}
+
+L'intervallo di confidenza osservato \`e:
+\begin{equation}
+  [C_{\text{obs,min}},\; C_{\text{obs,max}}] = \bigl[\hat{C} - 1.96\,\sigma_{\text{obs}},\; \hat{C} + 1.96\,\sigma_{\text{obs}}\bigr] \cap [0,1]
+\end{equation}
+
+Il valore di $\sigma_{\text{base}}$ per ciascuna azione \`e:
+
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+\textbf{Azione} & $\sigma_{\text{base}}$ \\
+\midrule
+L1\_inspect & 0.10 \\
+L4\_verify  & 0.01 \\
+monitoring  & 0.005 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Aggiornamento dell'Incertezza Epistemica}
+
+Ogni ispezione riduce $\varepsilon$ tramite il \texttt{knowledge\_gain} $\kappa$ dell'azione:
+\begin{equation}
+  \varepsilon_{\text{new}} = \max(0.03,\; \varepsilon \cdot (1 - \kappa))
+\end{equation}
+
+Valori: monitoring $\kappa = 0.30$; proof\_load\_test $\kappa = 0.50$.
+
+\subsection{Classe di Attenzione (CdA)}
+
+Calcolata sulla condizione osservata minima tra tutti i componenti ispezionati:
+
+\begin{center}
+\begin{tabular}{lcl}
+\toprule
+\textbf{CdA} & \textbf{Soglia osservata} & \textbf{Scadenza ispezione} \\
+\midrule
+Bassa       & $> 0.90$ & $+8$ trimestri \\
+Medio-Bassa & $> 0.80$ & $+6$ trimestri \\
+Media       & $> 0.60$ & $+4$ trimestri \\
+Medio-Alta  & $> 0.40$ & $+2$ trimestri \\
+Alta        & $\leq 0.40$ & $+1$ trimestre \\
+Sconosciuta & mai ispezionato & --- \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Con \texttt{enforce\_guidelines = True}, il mancato rispetto delle scadenze genera un \textit{backlog} conteggiato nei KPI.
+
+\subsection{Monitoraggio Continuo}
+
+Quando il monitoraggio \`e attivo, il simulatore calcola ad ogni turno la curva predittiva di degrado per i prossimi $\texttt{monitoring\_duration\_years} \times 4$ trimestri, proiettando l'et\`a efficace con il moltiplicatore medio di traffico e ambiente (componente deterministica). La banda di confidenza \`e $\pm 1.96\,\sigma_{\text{obs}}$ con $\sigma_{\text{base}} = 0.005$.
+
+% ======================================================
+\section{Prova di Carico (Proof Load Test)}
+
+\subsection{Logica del Test a Passi}
+
+Il test viene eseguito a \texttt{step\_count} (default 3) livelli di carico crescenti $\alpha_k$, da $\alpha/\text{step}$ ad $\alpha$:
+
+\begin{equation}
+  S_{\text{test},k} = \theta_{\text{test}} \cdot (G + \alpha_k \cdot Q_{\text{codice}})
+\end{equation}
+
+Per ogni campione $i$ e passo $k$:
+\begin{itemize}
+  \item $R_i \leq S_{\text{test},k}$ su stato SLS $\Rightarrow$ campione \textbf{schermato} (fermato preventivamente)
+  \item $R_i \leq S_{\text{test},k}$ su stato ULS $\Rightarrow$ campione \textbf{fallito} (collasso durante test)
+\end{itemize}
+
+Al termine del test:
+\begin{align}
+  p_{\text{pass}} &= P(\text{sopravvissuto a tutti i passi}) \\
+  p_{\text{screen}} &= P(\text{schermato senza collasso}) \\
+  p_{\text{fail,test}} &= P(\text{collasso durante il test})
+\end{align}
+
+\subsection{Aggiornamento Bayesiano Analitico}
+
+Per ogni stato limite, si condiziona la resistenza $R \sim \text{LogN}$ sull'evento $R > x_0$, con soglia:
+\begin{equation}
+  x_0 = \mu_G + \alpha \cdot Q_{\text{codice}}
+\end{equation}
+
+I momenti esatti della distribuzione troncata (Aitchison \& Brown 1957; JCSS PMC \S3.7) sono:
+
+\begin{align}
+  k &= \frac{\ln x_0 - \mu_{\ln R}}{\sigma_{\ln R}} \\
+  \Phi_0 &= \Phi(-k) = P(R > x_0) \\
+  \mathbb{E}[R \mid R > x_0] &= R_\mu \cdot \frac{\Phi(\sigma_{\ln R} - k)}{\Phi_0} \\
+  \mathbb{E}[R^2 \mid R > x_0] &= R_\mu^2 \cdot e^{\sigma_{\ln R}^2} \cdot \frac{\Phi(2\sigma_{\ln R} - k)}{\Phi_0} \\
+  \text{COV}_{\text{post}} &= \frac{\sqrt{\mathbb{E}[R^2] - \mathbb{E}[R]^2}}{\mathbb{E}[R]}
+\end{align}
+
+La decomposizione dell'incertezza preserva le componenti irreducibili:
+\begin{equation}
+  v_{m,\text{post}} = \sqrt{\max\!\bigl(0,\; \text{COV}_{\text{post}}^2 - v_g^2 - v_{\text{mod}}^2\bigr)}
+\end{equation}
+
+\textbf{Propriet\`a formale:} il condizionamento su $R > x_0$ implica $\mathbb{E}[R\mid R>x_0] \geq R_\mu$, quindi $\beta_{\text{post}} \geq \beta_{\text{prior}}$ per costruzione. Il proof load test non pu\`o peggiorare la stima di affidabilit\`a di un ponte che lo supera.
+
+% ======================================================
+\section{Modello di Fragilità al Traffico}
+
+\subsection{Modelli di Carico Disponibili}
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Modello} & $\eta$ (mediana) & $\beta$ (dispersione) & \textbf{Uso tipico} \\
+\midrule
+GL\_light  & 7.17 & 0.40 & Traffico leggero \\
+GL\_medium & 3.19 & 0.36 & Traffico misto \\
+GL\_heavy  & 2.33 & 0.33 & Traffico pesante (default) \\
+NTC        & 1.68 & 0.33 & NTC 2018 LM1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Fattori di Correzione}
+
+\begin{equation}
+  \eta_{\text{eff}} = \eta_{\text{base}}
+    \cdot \gamma_{\text{corsie}}
+    \cdot \gamma_{\text{offset}}
+    \cdot \gamma_{\text{area}}
+    \cdot \gamma_{\text{age}}
+\end{equation}
+
+\begin{itemize}
+  \item $\gamma_{\text{corsie}}$: $+10\%$ per 2 corsie, $+35\%$ per 1 corsia
+  \item $\gamma_{\text{offset}} = 1 + 0.22 \cdot d_{\text{off}}$ --- beneficio dell'eccentricit\`a del carico
+  \item $\gamma_{\text{area}} = 1.03$ se l'area rimanente \`e inattiva
+  \item $\gamma_{\text{age}} = 1 - 0.18 \cdot (1 - C_{\text{str,min}})$ --- penale per degrado strutturale
+\end{itemize}
+
+dove $C_{\text{str,min}} = \min(C_{\text{imp}}, C_{\text{pile}}, C_{\text{spalle}})$ \`e la condizione minima dei soli componenti portanti.
+
+Il tasso di fallimento annuale al traffico \`e:
+\begin{equation}
+  \lambda_{\text{ann}} = \begin{cases}
+    p_{f,\alpha=1} \times P_{\text{overload,month}} \times P_{\text{congestion}} & \text{(GL\_heavy)} \\
+    p_{f,\alpha=1} \times 10^{-3} & \text{(NTC)}
+  \end{cases}
+\end{equation}
+
+% ======================================================
+\section{Modello Sismico}
+
+Il modulo sismico usa un \textbf{modello di fragilità lognormale} calibrato su classi di ponti e stati limite (GdL, SD, NC):
+
+\begin{equation}
+  P(\text{danno} \mid \text{PGA}) = \Phi\!\left(\frac{\ln(\text{PGA}/\eta_s)}{\beta_s}\right)
+\end{equation}
+
+Il PGA controllante viene stimato empiricamente come:
+\begin{equation}
+  \text{PGA}_{\text{ctrl}} = 0.04 + 0.18 \cdot p_{f,\text{ann}} + 0.015 \cdot M_{\text{max}}
+\end{equation}
+
+La probabilit\`a annuale di eccedenza sismica \`e:
+\begin{equation}
+  P_{\text{sism,ann}} = P(\text{danno} \mid \text{PGA}_{\text{ctrl}}) \times P(\text{terremoto})
+\end{equation}
+
+Gli eventi sismici stocastici vengono generati con:
+\begin{itemize}
+  \item Probabilit\`a trimestrale: $p_{\text{EQ}} = p_{\text{ann}} / 4$
+  \item Magnitudo $M \sim \mathcal{U}[M_{\min}, M_{\max}]$
+  \item Posizione: casuale nel raggio $1.5\,r$ attorno alle coordinate del sito
+\end{itemize}
+
+% ======================================================
+\section{Modello di Rete: Importanza e Priorità}
+
+\subsection{Fattore di Importanza della Rete (NIF)}
+
+\begin{equation}
+  \text{NIF} = w_{\text{ADT}} \cdot \frac{\text{ADT}_i}{\text{ADT}_{\max}}
+              + (1 - w_{\text{ADT}}) \cdot \frac{c_i}{c_{\max}}
+\end{equation}
+
+dove $c_i$ \`e la centralit\`a inversamente proporzionale alla distanza media haversine ai 3 ponti pi\`u vicini. Peso default: $w_{\text{ADT}} = 0.65$.
+
+\subsection{Risk Priority Index (RPI)}
+
+\begin{equation}
+  \text{RPI} = \text{NIF} \times p_{f,\text{ann}}
+\end{equation}
+
+Consente di priorizzare interventi su ponti ad alta importanza strategica e alta probabilit\`a di fallimento.
+
+% ======================================================
+\section{Modello Economico}
+
+\subsection{Flusso di Budget per Turno}
+
+Il budget matura \textbf{interessi asimmetrici} prima dell'incasso:
+
+\begin{equation}
+  B_{t+1} = \begin{cases}
+    B_t \cdot (1 + r_d)^{0.25} + I_t & \text{se } B_t \geq 0 \quad (r_d = 2\%\text{/anno}) \\
+    B_t \cdot (1 + r_\delta)^{0.25} + I_t & \text{se } B_t < 0 \quad (r_\delta = 5\%\text{/anno})
+  \end{cases}
+\end{equation}
+
+dove $I_t$ \`e l'incasso trimestrale netto (ricavi meno costi degli interventi avviati).
+
+\subsection{Incasso Trimestrale}
+
+Il moltiplicatore di ricavo dipende dall'Health Index $\text{HI}$ e dallo stato di manutenzione:
+
+\begin{equation}
+  \mu_{\text{rev}} = \begin{cases}
+    1 - r_{\text{impact}}           & \text{se in manutenzione attiva} \\
+    1.0                              & \text{se } \text{HI} > 0.5 \\
+    \dfrac{\text{HI} - 0.2}{0.30}   & \text{se } 0.2 < \text{HI} \leq 0.5 \\
+    0.0                              & \text{se } \text{HI} \leq 0.2
+  \end{cases}
+\end{equation}
+
+\subsection{Health Index (HI)}
+
+Media ponderata della condizione corrente dei componenti:
+
+\begin{equation}
+  \text{HI} = \frac{\sum_i w_i \cdot C_i}{\sum_i w_i}
+\end{equation}
+
+Pesi default: impalcato 50\%, pile 30\%, spalle 15\%, appoggi 5\%.
+
+\subsection{Net Asset Value (NAV)}
+
+\begin{equation}
+  \text{NAV} = \underbrace{V_0 \cdot \text{HI}}_{\text{valore operativo}}
+              - \underbrace{C_{\text{ripristino}} \cdot (1 - \text{HI})}_{\text{backlog manutentivo}}
+              - \underbrace{I_{\text{trim}} \cdot r_{\text{impact}} \cdot q_{\text{res}}}_{\text{perdita ricavi attuale}}
+\end{equation}
+
+dove $V_0$ \`e il valore iniziale dell'asset, $C_{\text{ripristino}}$ il costo stimato di ripristino completo, $I_{\text{trim}}$ i ricavi trimestrali nominali, $r_{\text{impact}}$ l'impatto dell'intervento in corso, e $q_{\text{res}}$ i trimestri rimanenti dell'intervento. Il NAV \`e clampato a $\geq 0$.
+
+% ======================================================
+\section{Azioni di Manutenzione}
+
+\begin{longtable}{p{3.5cm}p{1.5cm}p{2.5cm}p{1.5cm}p{4cm}}
+\toprule
+\textbf{Azione} & \textbf{Tipo} & \textbf{Costo} & \textbf{Durata} & \textbf{Effetto} \\
+\midrule
+\endhead
+L1\_inspect & analysis & 1 €/m² & istantaneo & Osservazione $\pm10\%$ \\
+L4\_verify & analysis & 100 €/m² & istantaneo & Osservazione $\pm1\%$ \\
+monitoring & monitoring & 70 €/m² & istantaneo (attivo 5 anni) & Osservazione $\pm0.5\%$, previsioni future \\
+proof\_load\_test & proof\_load & 25 €/m² & istantaneo & Aggiornamento Bayesiano di $\beta$ \\
+replace\_impalcato & intervention & 4000 €/m² & 4 trimestri & gain = 1.0 su impalcato, 0.15 sugli altri \\
+replace\_pile & intervention & 3000 €/m² & 3 trimestri & gain = 1.0 su pile, 0.15 sugli altri \\
+replace\_spalle & intervention & 2500 €/m² & 3 trimestri & gain = 1.0 su spalle, 0.15 sugli altri \\
+replace\_appoggi & intervention & €100\,000 fissi & 2 trimestri & gain = 1.0 su appoggi, 0.15 sugli altri \\
+ripristino\_strutturale & intervention & 1500 €/m² & 3 trimestri & gain = 0.5 su pile + spalle ($\sigma_g = 0.05$) \\
+ripristino\_completo & intervention & 3500 €/m² & 5 trimestri & gain: imp 0.7, pile 0.6, spalle 0.5, appoggi 0.4 ($\sigma_g = 0.05$) \\
+\bottomrule
+\end{longtable}
+
+Il gain effettivo \`e $g_{\text{eff}} = \max(0,\; g_{\text{nom}} + \mathcal{N}(0, \sigma_g))$. Le sostituzioni complete (replace\_*) ripristinano il componente target a condizione 1.0 e forniscono un \textbf{bonus del 15\%} agli altri componenti per effetto trascinamento.
+
+\subsection{Vincoli di Pianificazione}
+
+\begin{itemize}
+  \item Un ponte in manutenzione attiva non pu\`o ricevere nuove azioni.
+  \item Non \`e possibile pianificare la stessa azione consecutivamente (eccezione: L1\_inspect).
+  \item Non \`e possibile avviare il monitoraggio se gi\`a attivo.
+  \item Il budget \`e verificato all'esecuzione: se insufficiente, l'azione \`e annullata.
+  \item Le \texttt{allowed\_actions} per scenario filtrano le opzioni sin dall'avvio della sessione.
+\end{itemize}
+
+% ======================================================
+\section{Condizioni di Fine-Partita}
+
+\subsection{Crollo Strutturale}
+
+L'agente viene eliminato se la \textit{condizione minima strutturale} di un qualsiasi ponte sotto la sua gestione scende sotto la soglia:
+
+\begin{equation}
+  C_{\text{str,min}} = \min(C_{\text{imp}}, C_{\text{pile}}, C_{\text{spalle}}) \leq 0.10
+\end{equation}
+
+Gli appoggi sono esclusi in quanto componenti funzionali, non strutturali portanti.
+
+\subsection{Bancarotta}
+
+L'agente viene eliminato se il budget rimane negativo per \textbf{4 trimestri consecutivi} (= 1 anno):
+\begin{equation}
+  \text{negative\_budget\_streak} \geq 4
+\end{equation}
+
+\subsection{Fine Naturale}
+
+La simulazione termina al raggiungimento di \texttt{max\_quarters} o di \texttt{years} $\times 4$ trimestri.
+
+% ======================================================
+\section{Flusso Sperimentale}
+
+La modalit\`a ricerca gestisce il ciclo di vita di ogni sessione attraverso 4 fasi:
+
+\begin{enumerate}
+  \item \textbf{tutorial} --- 5 passi didattici interattivi (ruolo, ponti, azioni, economia, consigli)
+  \item \textbf{playing} --- gioco vero e proprio con dashboard interattiva (\texttt{max\_quarters} trimestri)
+  \item \textbf{questionnaire} (opzionale) --- raccolta dati su esperienza, strategia, consapevolezza dell'asimmetria informativa
+  \item \textbf{done} --- debrief con confronto contro baseline euristica eseguita post-hoc sullo stesso scenario
+\end{enumerate}
+
+Il questionario raccoglie: anni di esperienza, ruolo professionale, familiarit\`a con l'affidabilit\`a strutturale, strategia dichiarata, approccio sistematico vs.\ reattivo, consapevolezza dell'asimmetria informativa, uso dell'indice $\beta$ nelle decisioni.
+
+% ======================================================
+\section{KPI Registrati per Sessione}
+
+\begin{center}
+\begin{tabular}{lp{9cm}}
+\toprule
+\textbf{KPI} & \textbf{Calcolo} \\
+\midrule
+\texttt{health\_index} & $\sum(C_{\min,i} \cdot \text{ADT}_i) / \sum \text{ADT}_i$ (media pesata per traffico) \\
+\texttt{total\_asset\_value} & $\sum V_{0,i} \cdot C_{\min,i}$ \\
+\texttt{net\_worth} & budget $+$ total\_asset\_value \\
+\texttt{backlog\_count} & ponti con scadenza ispezione superata \\
+\texttt{inspection\_coverage} & ponti con almeno un'osservazione / totale \\
+\texttt{knowledge\_gap\_count} & ponti mai ispezionati \\
+\texttt{active\_monitoring\_count} & ponti con monitoraggio attivo \\
+\texttt{network\_reliability\_index} & $\min(\beta_{\text{post}})$ su tutti i ponti \\
+\texttt{network\_failure\_probability} & $\max(p_{f,\text{post}})$ su tutti i ponti \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Tutti i KPI vengono registrati in CSV ad ogni turno per l'analisi scientifica successiva.
+
+% ======================================================
+\section{Limitazioni e Assunzioni Note}
+
+\begin{center}
+\begin{tabular}{p{4cm}p{5.5cm}p{3cm}}
+\toprule
+\textbf{Limitazione} & \textbf{Impatto} & \textbf{Stato} \\
+\midrule
+Indipendenza componenti nel sistema serie & Conservativo: $p_{f,\text{sistema}}$ sovrastimata & Accettato per semplicità \\
+Fattore 2.24 non calibrato su dati di campo & $R_\mu$ relativo, coerente internamente & Da calibrare su AINOP/JCSS \\
+$\beta_{\text{post}} \geq \beta_{\text{prior}}$ per proof load & Propriet\`a matematica del condizionamento & Corretto e dichiarabile \\
+Correlazione tra ponti solo via fattore ambientale & Correlazione strutturale non modellata & Accettato \\
+Fragilità sismica empirica & Non sostituisce analisi sismica NTC & Scopo didattico \\
+Revenue disconnesso da $\beta$ & --- & Design sperimentale intenzionale \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% --- Bibliography ---
+\newpage
+\begin{thebibliography}{99}
+\bibitem{aitchison1957} Aitchison, J., Brown, J.A.C. (1957). \textit{The Lognormal Distribution}. Cambridge University Press.
+\bibitem{jcss2001} JCSS (2001). \textit{Probabilistic Model Code}. Joint Committee on Structural Safety.
+\bibitem{en1990} EN 1990 (2002). \textit{Eurocode --- Basis of Structural Design}. CEN.
+\bibitem{en19912} EN 1991-2 (2003). \textit{Eurocode 1: Actions on structures --- Part 2: Traffic loads on bridges}. CEN.
+\bibitem{ntc2018} NTC (2018). \textit{Norme Tecniche per le Costruzioni}. D.M. 17 gennaio 2018.
+\bibitem{mit2020} MIT (2020). \textit{Linee Guida per la Classificazione e Gestione del Rischio, la Valutazione della Sicurezza e il Monitoraggio dei Ponti}. Ministero delle Infrastrutture e dei Trasporti.
+\bibitem{rackwitz2001} Rackwitz, R. (2001). Reliability analysis --- a review and some perspectives. \textit{Structural Safety}, 23(4), 365--395.
+\bibitem{frangopol2004} Frangopol, D.M., Kallen, M.-J., van Noortwijk, J.M. (2004). Probabilistic models for life-cycle performance of deteriorating structures. \textit{Progress in Structural Engineering and Materials}, 6(4), 197--212.
+\bibitem{noortwijk2009} van Noortwijk, J.M. (2009). A survey of the application of gamma processes in maintenance. \textit{Reliability Engineering \& System Safety}, 94(1), 2--21.
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,21 @@
+# Legge IPOTETICA (solo per test di sensibilita'): target di affidabilita' per
+# strutture esistenti (tier NEN 8700, livello di disapprovazione), valutazione
+# L4 obbligatoria ed eseguita d'ufficio quando l'indice di rischio supera la
+# soglia, censimento obbligatorio, 10% del budget vincolato ad analisi.
+id: hyp_risk_based_existing
+display_name: "Ipotetica: rischio + tier esistenti (NEN 8700)"
+source: "ipotetica; tier da NEN 8700 (livello di disapprovazione); logica risk-based da NCHRP 782 / FHWA RBI"
+hypothetical: true
+target_tier: NEN8700_disapproval
+obligations:
+  - {trigger: not_censused, action: L0_census}
+  - {trigger: pf_above_threshold, action: L4_verify, threshold: 1.0e-3}   # beta annuo < ~3.1
+  - {trigger: beta_below_target, action: L2_inspect, grace_quarters: 2}
+enforcement:
+  mode: forced
+information:
+  census_required: true
+resources:
+  earmarked_fraction: 0.10
+param_overrides:
+  cda_multi_hazard: true

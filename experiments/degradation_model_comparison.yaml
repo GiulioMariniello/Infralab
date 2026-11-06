@@ -1,0 +1,17 @@
+# Confronto modelli di degrado (Weibull vs processo gamma) sotto la stessa
+# policy euristica: materiale per studi su incertezza temporale del degrado.
+#   python -m infralab.lab run experiments/degradation_model_comparison.yaml
+name: degradation-model-comparison
+scenario: EXP-B-AGING
+horizon_quarters: 40
+agents:
+  - id: heuristic
+    type: Euristico
+grid:
+  params.degradation_model: [weibull, gamma]
+  params.gamma_process_theta: [0.02, 0.10]
+replicates: 10
+seed: 20260702
+outputs:
+  dir: results/degradation_model_comparison
+  formats: [csv, parquet]

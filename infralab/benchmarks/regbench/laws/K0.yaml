@@ -1,0 +1,24 @@
+id: regbench_K0_biennale
+display_name: Ispezione periodica obbligatoria ogni due anni per tutti i ponti
+source: 'infralab-regbench, chiusura (2026-10-11): riferimento con l''obbligo biennale'
+obligations:
+- trigger: inspection_overdue
+  action: L1_inspect
+enforcement:
+  mode: forced
+hypothetical: true
+param_overrides:
+  inspection_overdue_grace_quarters: 0
+  l4_escalation_quarters: 0
+  forced_funding: owner_budget
+  annual_budget_grant_fraction: 0.0
+cda_config:
+  bassa_threshold: 0.85
+  bassa_due_quarters: 8
+  medio_bassa_threshold: 0.75
+  medio_bassa_due_quarters: 8
+  media_threshold: 0.62
+  media_due_quarters: 8
+  medio_alta_threshold: 0.5
+  medio_alta_due_quarters: 8
+  alta_due_quarters: 8

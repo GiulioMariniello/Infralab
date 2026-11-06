@@ -1,0 +1,19 @@
+# Linee Guida Ponti 2020 con ESECUZIONE D'UFFICIO: l'ispezione scaduta e la
+# valutazione L4 dovuta vengono eseguite dallo Stato e addebitate al gestore
+# (anche a budget negativo). Nessuna misura operativa.
+id: it_lg2020_forced
+display_name: "Linee Guida Ponti 2020 - esecuzione d'ufficio"
+source: "DM MIT 578/2020; Istruzioni operative ANSFISA (enforcement modellato, non normato)"
+target_tier: null
+obligations:
+  - {trigger: inspection_overdue, action: L1_inspect}
+  - {trigger: l4_escalation_overdue, action: L4_verify}
+enforcement:
+  mode: forced
+information:
+  census_required: false
+resources:
+  earmarked_fraction: 0.0
+param_overrides:
+  l4_escalation_quarters: 4
+  inspection_overdue_grace_quarters: 2
