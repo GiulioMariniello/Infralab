@@ -1,0 +1,96 @@
+name: ZI-det08
+scenario: scenarios/vecchio-le10k.json
+horizon_quarters: 200
+seed: 20261007
+seed_scope: replicate
+replicates: 10
+grid:
+  params.observation_mode:
+  - inspected
+  params.true_reliability_mode:
+  - physical
+  params.rng_streams:
+  - keyed
+  params.failure_model:
+  - reliability
+  params.degradation_pause_on:
+  - interventions
+  params.reliability_projection_years:
+  - 1
+  params.reliability_refresh_every_quarters:
+  - 4
+  params.code_framework:
+  - EN1990
+  params.enforce_guidelines:
+  - false
+  params.bankruptcy_enabled:
+  - false
+  params.capacity_condition_sensitivity:
+  - 0.4
+  params.reliability_resistance_scale:
+  - 1.25
+  params.deterioration_exponent:
+  - 4.0
+  params.traffic_demand_mode:
+  - self_designed
+  params.calibration_profile:
+  - fhwa_unit_costs_2025_b
+  params.network_relevance_mode:
+  - nbi_detour
+  params.detour_accounting:
+  - true
+  params.posting_entry_rate_q:
+  - 0.00126
+  params.initial_inventory_known:
+  - true
+  params.ethical_floor_enabled:
+  - true
+  params.policy_sandbox:
+  - true
+  params.strict_information:
+  - true
+  params.revenue_health_source:
+  - assessed
+  params.planner_information:
+  - belief
+  params.hydraulic_hazard_enabled:
+  - true
+  params.hydraulic_legacy_mode:
+  - false
+  params.impact_hazard_enabled:
+  - true
+  params.fatigue_hazard_enabled:
+  - true
+  params.detour_km_cap:
+  - 50.0
+  params.detour_partial_diversion:
+  - trucks
+  params.detour_works_diversion:
+  - false
+  params.regional_events_enabled:
+  - true
+  params.regulatory_regime:
+  - regulations/D0_nessun_obbligo.yaml
+  - regulations/D1_periodica.yaml
+  - regulations/N24_nbis.yaml
+  params.ethical_floor_condition:
+  - 0.0
+  params.progressive_events_enabled:
+  - true
+  params.hydraulic_collapse_progressive_share:
+  - 0.5
+  params.progressive_hydraulic_duration_mean_q:
+  - 20
+  params.ethical_floor_beta:
+  - 3.02
+  params.progressive_hydraulic_detect_factor_l1:
+  - 0.8
+agents:
+- id: typical_owner
+  type: Basic
+  params:
+    policy: typical_owner
+outputs:
+  dir: runs/ZI-det08
+  formats:
+  - csv

@@ -1,0 +1,731 @@
+{
+ "medie": [
+  {
+   "p_scoperta": "0.2",
+   "legge": "D0",
+   "idr_attesi": 0.265,
+   "S1": 4.2251,
+   "crolli_attesi": 0.1501,
+   "spesa": 274.669,
+   "floor_beta": 0.0,
+   "floor_prog": 1.1,
+   "prog_arrestati_soglia": 1.1
+  },
+  {
+   "p_scoperta": "0.2",
+   "legge": "D1",
+   "idr_attesi": 0.13,
+   "S1": 4.323,
+   "crolli_attesi": 0.0811,
+   "spesa": 368.8619,
+   "floor_beta": 0.0,
+   "floor_prog": 3.8,
+   "prog_arrestati_soglia": 3.8
+  },
+  {
+   "p_scoperta": "0.2",
+   "legge": "N24",
+   "idr_attesi": 0.16,
+   "S1": 4.3194,
+   "crolli_attesi": 0.0769,
+   "spesa": 364.9798,
+   "floor_beta": 0.0,
+   "floor_prog": 3.4,
+   "prog_arrestati_soglia": 3.4
+  },
+  {
+   "p_scoperta": "0.5",
+   "legge": "D0",
+   "idr_attesi": 0.26,
+   "S1": 4.2251,
+   "crolli_attesi": 0.1501,
+   "spesa": 274.6714,
+   "floor_beta": 0.0,
+   "floor_prog": 1.2,
+   "prog_arrestati_soglia": 1.2
+  },
+  {
+   "p_scoperta": "0.5",
+   "legge": "D1",
+   "idr_attesi": 0.055,
+   "S1": 4.3249,
+   "crolli_attesi": 0.0805,
+   "spesa": 368.8473,
+   "floor_beta": 0.0,
+   "floor_prog": 5.5,
+   "prog_arrestati_soglia": 5.5
+  },
+  {
+   "p_scoperta": "0.5",
+   "legge": "N24",
+   "idr_attesi": 0.115,
+   "S1": 4.3203,
+   "crolli_attesi": 0.0767,
+   "spesa": 364.8541,
+   "floor_beta": 0.0,
+   "floor_prog": 4.3,
+   "prog_arrestati_soglia": 4.3
+  },
+  {
+   "p_scoperta": "0.8",
+   "legge": "D0",
+   "idr_attesi": 0.25,
+   "S1": 4.2256,
+   "crolli_attesi": 0.1497,
+   "spesa": 274.8663,
+   "floor_beta": 0.0,
+   "floor_prog": 1.4,
+   "prog_arrestati_soglia": 1.4
+  },
+  {
+   "p_scoperta": "0.8",
+   "legge": "D1",
+   "idr_attesi": 0.02,
+   "S1": 4.326,
+   "crolli_attesi": 0.0802,
+   "spesa": 368.817,
+   "floor_beta": 0.0,
+   "floor_prog": 6.3,
+   "prog_arrestati_soglia": 6.3
+  },
+  {
+   "p_scoperta": "0.8",
+   "legge": "N24",
+   "idr_attesi": 0.075,
+   "S1": 4.3219,
+   "crolli_attesi": 0.0766,
+   "spesa": 364.9262,
+   "floor_beta": 0.0,
+   "floor_prog": 5.2,
+   "prog_arrestati_soglia": 5.2
+  }
+ ],
+ "contrasti": {
+  "0.2/D1-D0": {
+   "idr_attesi": {
+    "base": 0.265,
+    "diff": -0.135,
+    "lo": -0.16,
+    "hi": -0.11499999999999999,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "S1": {
+    "base": 4.225111640313426,
+    "diff": 0.09786021229987396,
+    "lo": 0.09131732562635106,
+    "hi": 0.10448968836866838,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "crolli_attesi": {
+    "base": 0.15009076115332903,
+    "diff": -0.06901705710198225,
+    "lo": -0.08119169679183816,
+    "hi": -0.05584790960024453,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "spesa": {
+    "base": 274.66897873999994,
+    "diff": 94.19293078800008,
+    "lo": 78.26489843302512,
+    "hi": 111.61768712167503,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_beta": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_prog": {
+    "base": 1.1,
+    "diff": 2.7,
+    "lo": 2.3,
+    "hi": 3.2,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "prog_arrestati_soglia": {
+    "base": 1.1,
+    "diff": 2.7,
+    "lo": 2.2,
+    "hi": 3.2,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   }
+  },
+  "0.2/N24-D0": {
+   "idr_attesi": {
+    "base": 0.265,
+    "diff": -0.10500000000000001,
+    "lo": -0.13999999999999999,
+    "hi": -0.075,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "S1": {
+    "base": 4.225111640313426,
+    "diff": 0.09431580902733065,
+    "lo": 0.08811952080697275,
+    "hi": 0.10125560724248236,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "crolli_attesi": {
+    "base": 0.15009076115332903,
+    "diff": -0.0732032524902035,
+    "lo": -0.0884274909757296,
+    "hi": -0.05764202559502037,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "spesa": {
+    "base": 274.66897873999994,
+    "diff": 90.310839509,
+    "lo": 76.34010777702503,
+    "hi": 105.52902709857503,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_beta": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_prog": {
+    "base": 1.1,
+    "diff": 2.3,
+    "lo": 1.6,
+    "hi": 3.1,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "prog_arrestati_soglia": {
+    "base": 1.1,
+    "diff": 2.3,
+    "lo": 1.6,
+    "hi": 3.1,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   }
+  },
+  "0.2/D1-N24": {
+   "idr_attesi": {
+    "base": 0.16000000000000003,
+    "diff": -0.03000000000000001,
+    "lo": -0.06000000000000002,
+    "hi": 0.004999999999999992,
+    "positivi": 1,
+    "negativi": 6,
+    "semi": 10
+   },
+   "S1": {
+    "base": 4.319427449340756,
+    "diff": 0.0035444032725433063,
+    "lo": -0.0016513516110492653,
+    "hi": 0.009113751616285,
+    "positivi": 7,
+    "negativi": 3,
+    "semi": 10
+   },
+   "crolli_attesi": {
+    "base": 0.07688750866312553,
+    "diff": 0.004186195388221248,
+    "lo": -0.012106349264566293,
+    "hi": 0.017044803672192025,
+    "positivi": 7,
+    "negativi": 3,
+    "semi": 10
+   },
+   "spesa": {
+    "base": 364.97981824899995,
+    "diff": 3.8820912790000706,
+    "lo": -7.54105282852482,
+    "hi": 15.147027495150045,
+    "positivi": 5,
+    "negativi": 5,
+    "semi": 10
+   },
+   "floor_beta": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_prog": {
+    "base": 3.4,
+    "diff": 0.4,
+    "lo": -0.5,
+    "hi": 1.1,
+    "positivi": 6,
+    "negativi": 1,
+    "semi": 10
+   },
+   "prog_arrestati_soglia": {
+    "base": 3.4,
+    "diff": 0.4,
+    "lo": -0.6,
+    "hi": 1.0,
+    "positivi": 6,
+    "negativi": 1,
+    "semi": 10
+   }
+  },
+  "0.5/D1-D0": {
+   "idr_attesi": {
+    "base": 0.26,
+    "diff": -0.20500000000000002,
+    "lo": -0.24,
+    "hi": -0.17,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "S1": {
+    "base": 4.225111640313426,
+    "diff": 0.09981538517822397,
+    "lo": 0.09305128805699298,
+    "hi": 0.10585423237703939,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "crolli_attesi": {
+    "base": 0.1500860782596455,
+    "diff": -0.06954093066305306,
+    "lo": -0.0813094939172849,
+    "hi": -0.05703227183556711,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "spesa": {
+    "base": 274.67144294,
+    "diff": 94.17586330800006,
+    "lo": 78.17509706662514,
+    "hi": 112.27081038825006,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_beta": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_prog": {
+    "base": 1.2,
+    "diff": 4.3,
+    "lo": 3.4,
+    "hi": 5.2,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "prog_arrestati_soglia": {
+    "base": 1.2,
+    "diff": 4.3,
+    "lo": 3.4,
+    "hi": 5.2,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   }
+  },
+  "0.5/N24-D0": {
+   "idr_attesi": {
+    "base": 0.26,
+    "diff": -0.145,
+    "lo": -0.18,
+    "hi": -0.11000000000000001,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "S1": {
+    "base": 4.225111640313426,
+    "diff": 0.09519677552330812,
+    "lo": 0.08902266907522575,
+    "hi": 0.10211618987224183,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "crolli_attesi": {
+    "base": 0.1500860782596455,
+    "diff": -0.07336425139908526,
+    "lo": -0.08897557746289414,
+    "hi": -0.05742815795429783,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "spesa": {
+    "base": 274.67144294,
+    "diff": 90.18264412800002,
+    "lo": 76.11190132992493,
+    "hi": 105.00224875434998,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_beta": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_prog": {
+    "base": 1.2,
+    "diff": 3.1,
+    "lo": 2.3,
+    "hi": 4.0,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "prog_arrestati_soglia": {
+    "base": 1.2,
+    "diff": 3.1,
+    "lo": 2.3,
+    "hi": 4.0,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   }
+  },
+  "0.5/D1-N24": {
+   "idr_attesi": {
+    "base": 0.11500000000000002,
+    "diff": -0.06000000000000001,
+    "lo": -0.08500000000000002,
+    "hi": -0.034999999999999996,
+    "positivi": 0,
+    "negativi": 8,
+    "semi": 10
+   },
+   "S1": {
+    "base": 4.320308415836734,
+    "diff": 0.004618609654915851,
+    "lo": 2.600050252533414e-05,
+    "hi": 0.009747368691988143,
+    "positivi": 7,
+    "negativi": 3,
+    "semi": 10
+   },
+   "crolli_attesi": {
+    "base": 0.07672182686056024,
+    "diff": 0.0038233207360321986,
+    "lo": -0.01195072306632654,
+    "hi": 0.016625532338283584,
+    "positivi": 7,
+    "negativi": 3,
+    "semi": 10
+   },
+   "spesa": {
+    "base": 364.85408706799996,
+    "diff": 3.9932191800000565,
+    "lo": -7.565243601675029,
+    "hi": 15.25258705700008,
+    "positivi": 5,
+    "negativi": 5,
+    "semi": 10
+   },
+   "floor_beta": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_prog": {
+    "base": 4.3,
+    "diff": 1.2,
+    "lo": 0.7,
+    "hi": 1.8,
+    "positivi": 8,
+    "negativi": 0,
+    "semi": 10
+   },
+   "prog_arrestati_soglia": {
+    "base": 4.3,
+    "diff": 1.2,
+    "lo": 0.7,
+    "hi": 1.8,
+    "positivi": 8,
+    "negativi": 0,
+    "semi": 10
+   }
+  },
+  "0.8/D1-D0": {
+   "idr_attesi": {
+    "base": 0.25,
+    "diff": -0.22999999999999998,
+    "lo": -0.28500000000000003,
+    "hi": -0.18000000000000002,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "S1": {
+    "base": 4.225591875398516,
+    "diff": 0.10042836325195488,
+    "lo": 0.09408256483362118,
+    "hi": 0.10636002738644013,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "crolli_attesi": {
+    "base": 0.1496912300572985,
+    "diff": -0.06947445028350643,
+    "lo": -0.08209281233653888,
+    "hi": -0.05629999037190316,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "spesa": {
+    "base": 274.86629114,
+    "diff": 93.95073747300002,
+    "lo": 77.52904130600005,
+    "hi": 112.47372254869998,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_beta": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_prog": {
+    "base": 1.4,
+    "diff": 4.9,
+    "lo": 3.8,
+    "hi": 6.2,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "prog_arrestati_soglia": {
+    "base": 1.4,
+    "diff": 4.9,
+    "lo": 3.8,
+    "hi": 6.2,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   }
+  },
+  "0.8/N24-D0": {
+   "idr_attesi": {
+    "base": 0.25,
+    "diff": -0.175,
+    "lo": -0.21000000000000002,
+    "hi": -0.14000000000000004,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "S1": {
+    "base": 4.225591875398516,
+    "diff": 0.09634161076788664,
+    "lo": 0.09019469612654486,
+    "hi": 0.1027289129473878,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "crolli_attesi": {
+    "base": 0.1496912300572985,
+    "diff": -0.07308645832063432,
+    "lo": -0.08788884435699076,
+    "hi": -0.05740877606881265,
+    "positivi": 0,
+    "negativi": 10,
+    "semi": 10
+   },
+   "spesa": {
+    "base": 274.86629114,
+    "diff": 90.059864971,
+    "lo": 75.99653454724998,
+    "hi": 104.84425651757495,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_beta": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_prog": {
+    "base": 1.4,
+    "diff": 3.8,
+    "lo": 3.0,
+    "hi": 4.7,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   },
+   "prog_arrestati_soglia": {
+    "base": 1.4,
+    "diff": 3.8,
+    "lo": 3.0,
+    "hi": 4.7,
+    "positivi": 10,
+    "negativi": 0,
+    "semi": 10
+   }
+  },
+  "0.8/D1-N24": {
+   "idr_attesi": {
+    "base": 0.07500000000000001,
+    "diff": -0.05500000000000001,
+    "lo": -0.09,
+    "hi": -0.02,
+    "positivi": 1,
+    "negativi": 7,
+    "semi": 10
+   },
+   "S1": {
+    "base": 4.321933486166403,
+    "diff": 0.0040867524840682455,
+    "lo": -0.000261183878930804,
+    "hi": 0.008847152704458256,
+    "positivi": 8,
+    "negativi": 2,
+    "semi": 10
+   },
+   "crolli_attesi": {
+    "base": 0.07660477173666418,
+    "diff": 0.0036120080371278783,
+    "lo": -0.012309691111308257,
+    "hi": 0.0166450919363968,
+    "positivi": 7,
+    "negativi": 3,
+    "semi": 10
+   },
+   "spesa": {
+    "base": 364.92615611099995,
+    "diff": 3.890872502000019,
+    "lo": -7.89636457807494,
+    "hi": 15.242739409625077,
+    "positivi": 5,
+    "negativi": 5,
+    "semi": 10
+   },
+   "floor_beta": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "negativi": 0,
+    "semi": 10
+   },
+   "floor_prog": {
+    "base": 5.2,
+    "diff": 1.1,
+    "lo": 0.4,
+    "hi": 1.8,
+    "positivi": 7,
+    "negativi": 1,
+    "semi": 10
+   },
+   "prog_arrestati_soglia": {
+    "base": 5.2,
+    "diff": 1.1,
+    "lo": 0.4,
+    "hi": 1.8,
+    "positivi": 7,
+    "negativi": 1,
+    "semi": 10
+   }
+  }
+ },
+ "regole": {
+  "I1": {
+   "0.2": {
+    "D1": 10,
+    "N24": 10
+   },
+   "0.5": {
+    "D1": 10,
+    "N24": 10
+   },
+   "0.8": {
+    "D1": 10,
+    "N24": 10
+   }
+  },
+  "I2": {
+   "0.2": {
+    "diff": -0.03000000000000001,
+    "lo": -0.06000000000000002,
+    "hi": 0.004999999999999992,
+    "negativi": 6,
+    "positivi": 1
+   },
+   "0.5": {
+    "diff": -0.06000000000000001,
+    "lo": -0.08500000000000002,
+    "hi": -0.034999999999999996,
+    "negativi": 8,
+    "positivi": 0
+   },
+   "0.8": {
+    "diff": -0.05500000000000001,
+    "lo": -0.09,
+    "hi": -0.02,
+    "negativi": 7,
+    "positivi": 1
+   }
+  },
+  "I1_regge": true,
+  "I2_esclude_zero_ovunque": false
+ }
+}

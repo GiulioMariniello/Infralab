@@ -1,0 +1,24 @@
+id: regbench_N24_nbis
+display_name: Ispezione di routine ogni 24 mesi, ogni 12 mesi per i ponti con voto 3 o inferiore (sul modello NBIS 2022)
+source: 'infralab-regbench, revisione degli strutturisti (2026-11-02): riferimento NBIS, 23 CFR 650.311(a)'
+obligations:
+- trigger: inspection_overdue
+  action: L1_inspect
+enforcement:
+  mode: forced
+hypothetical: true
+param_overrides:
+  inspection_overdue_grace_quarters: 0
+  l4_escalation_quarters: 0
+  forced_funding: owner_budget
+  annual_budget_grant_fraction: 0.0
+cda_config:
+  bassa_threshold: 0.85
+  bassa_due_quarters: 8
+  medio_bassa_threshold: 0.75
+  medio_bassa_due_quarters: 8
+  media_threshold: 0.62
+  media_due_quarters: 8
+  medio_alta_threshold: 0.39
+  medio_alta_due_quarters: 8
+  alta_due_quarters: 4

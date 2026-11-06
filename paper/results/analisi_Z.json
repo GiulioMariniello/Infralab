@@ -1,0 +1,4470 @@
+{
+ "limiti": [
+  3.02,
+  3.3,
+  3.66
+ ],
+ "partite": {
+  "princ": 90,
+  "off": 90,
+  "markov": 40,
+  "potenza": 40,
+  "gamma": 40,
+  "corta": 50
+ },
+ "contrasti": {
+  "princ/do_nothing/D1-D0": {
+   "S1": {
+    "base": 3.833048243763843,
+    "diff": 0.008745375941531908,
+    "lo": 0.006502623988287459,
+    "hi": 0.011295472847464705,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.003822130380551203,
+    "hi_ponti_semi": 0.014907326331422263
+   },
+   "crolli_attesi": {
+    "base": 0.5218097781068345,
+    "diff": -0.008901567767059627,
+    "lo": -0.022058487196957646,
+    "hi": 0.00202433777956152,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 6,
+    "lo_ponti_semi": -0.03238724281401409,
+    "hi_ponti_semi": 0.010849331811907125
+   },
+   "crolli": {
+    "base": 1.1,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 4.4,
+    "diff": -0.6,
+    "lo": -1.1,
+    "hi": -0.1,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 4,
+    "lo_ponti_semi": -1.5999999999999999,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 43.45,
+    "diff": -0.725,
+    "lo": -4.625,
+    "hi": 2.225,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 4,
+    "lo_ponti_semi": -8.625625,
+    "hi_ponti_semi": 4.7
+   },
+   "sotto_ponti_330": {
+    "base": 20.0,
+    "diff": -1.4,
+    "lo": -2.2,
+    "hi": -0.7,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 8
+   },
+   "anni_sotto_330": {
+    "base": 220.95,
+    "diff": -12.9,
+    "lo": -27.425625,
+    "hi": -1.85,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 7
+   },
+   "sotto_ponti_366": {
+    "base": 56.5,
+    "diff": -1.3,
+    "lo": -1.8,
+    "hi": -0.9,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 9
+   },
+   "anni_sotto_366": {
+    "base": 923.525,
+    "diff": -11.925,
+    "lo": -23.025624999999998,
+    "hi": -1.2493749999999977,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 7
+   },
+   "spesa": {
+    "base": 0.4751055,
+    "diff": 9.705157907999995,
+    "lo": 9.27415333935,
+    "hi": 10.185019517774998,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 202.74601909837497,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.0,
+    "diff": 4.2,
+    "lo": 3.1,
+    "hi": 5.6,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 9614.2,
+    "lo": 9605.7,
+    "hi": 9623.202500000001,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "princ/do_nothing/N24-D0": {
+   "S1": {
+    "base": 3.833048243763843,
+    "diff": 0.007146578180360619,
+    "lo": 0.005075150044894768,
+    "hi": 0.00928419526820095,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0031129296955785066,
+    "hi_ponti_semi": 0.012209921445588565
+   },
+   "crolli_attesi": {
+    "base": 0.5218097781068345,
+    "diff": -0.007949855583065834,
+    "lo": -0.020838005148901526,
+    "hi": 0.00253304447995048,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 6,
+    "lo_ponti_semi": -0.02992867073639002,
+    "hi_ponti_semi": 0.010839630915402557
+   },
+   "crolli": {
+    "base": 1.1,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 4.4,
+    "diff": -0.4,
+    "lo": -0.7,
+    "hi": -0.1,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 4,
+    "lo_ponti_semi": -1.2000000000000002,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 43.45,
+    "diff": -1.225,
+    "lo": -4.975,
+    "hi": 1.725,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 4,
+    "lo_ponti_semi": -9.7,
+    "hi_ponti_semi": 4.55
+   },
+   "sotto_ponti_330": {
+    "base": 20.0,
+    "diff": -1.2,
+    "lo": -1.8,
+    "hi": -0.6,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 7
+   },
+   "anni_sotto_330": {
+    "base": 220.95,
+    "diff": -10.35,
+    "lo": -21.9,
+    "hi": -0.575,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 6
+   },
+   "sotto_ponti_366": {
+    "base": 56.5,
+    "diff": -1.3,
+    "lo": -1.7,
+    "hi": -0.9,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 9
+   },
+   "anni_sotto_366": {
+    "base": 923.525,
+    "diff": -10.95,
+    "lo": -20.3,
+    "hi": -2.1231249999999933,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 6
+   },
+   "spesa": {
+    "base": 0.4751055,
+    "diff": 5.985875440000001,
+    "lo": 5.337586231350002,
+    "hi": 6.681184405750001,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 202.74601909837497,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.0,
+    "diff": 3.7,
+    "lo": 2.9,
+    "hi": 4.7,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 5110.8,
+    "lo": 5100.1,
+    "hi": 5122.5025,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "princ/do_nothing/D1-N24": {
+   "S1": {
+    "base": 3.840194821944204,
+    "diff": 0.0015987977611712889,
+    "lo": 0.0005381127540619102,
+    "hi": 0.0026606431115573028,
+    "semi": 10,
+    "positivi": 7,
+    "negativi": 3,
+    "lo_ponti_semi": -0.0006189644426079945,
+    "hi_ponti_semi": 0.004667808500616445
+   },
+   "crolli_attesi": {
+    "base": 0.5138599225237688,
+    "diff": -0.0009517121839937914,
+    "lo": -0.00691275269675188,
+    "hi": 0.00596421358650563,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 5,
+    "lo_ponti_semi": -0.012904888493452026,
+    "hi_ponti_semi": 0.009287047478007251
+   },
+   "crolli": {
+    "base": 1.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "sotto_ponti_302": {
+    "base": 4.0,
+    "diff": -0.2,
+    "lo": -0.5,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 2,
+    "lo_ponti_semi": -0.7999999999999999,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 42.225,
+    "diff": 0.5,
+    "lo": -0.275,
+    "hi": 1.825,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 3,
+    "lo_ponti_semi": -0.6000000000000001,
+    "hi_ponti_semi": 3.0006250000000017
+   },
+   "sotto_ponti_330": {
+    "base": 18.8,
+    "diff": -0.2,
+    "lo": -0.6,
+    "hi": 0.2,
+    "semi": 10,
+    "positivi": 1,
+    "negativi": 3
+   },
+   "anni_sotto_330": {
+    "base": 210.6,
+    "diff": -2.55,
+    "lo": -9.800625,
+    "hi": 5.500625000000002,
+    "semi": 10,
+    "positivi": 6,
+    "negativi": 4
+   },
+   "sotto_ponti_366": {
+    "base": 55.2,
+    "diff": 0.0,
+    "lo": -0.3,
+    "hi": 0.3,
+    "semi": 10,
+    "positivi": 1,
+    "negativi": 1
+   },
+   "anni_sotto_366": {
+    "base": 912.575,
+    "diff": -0.975,
+    "lo": -8.75,
+    "hi": 5.500625000000002,
+    "semi": 10,
+    "positivi": 7,
+    "negativi": 3
+   },
+   "spesa": {
+    "base": 6.460980940000001,
+    "diff": 3.719282467999995,
+    "lo": 3.192733840199996,
+    "hi": 4.099702821874996,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 202.74601909837497,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 4.7,
+    "diff": 0.5,
+    "lo": 0.0,
+    "hi": 1.0,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 1
+   },
+   "isp_imposte": {
+    "base": 5110.8,
+    "diff": 4503.4,
+    "lo": 4491.0,
+    "hi": 4513.5025,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "princ/typical_owner/D1-D0": {
+   "S1": {
+    "base": 4.225111640313426,
+    "diff": 0.09981538517822397,
+    "lo": 0.09352125124699934,
+    "hi": 0.10624240952189819,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.08376853314641618,
+    "hi_ponti_semi": 0.1174764384727388
+   },
+   "crolli_attesi": {
+    "base": 0.1500860782596455,
+    "diff": -0.06954093066305306,
+    "lo": -0.08180096592783492,
+    "hi": -0.05709155947058935,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10,
+    "lo_ponti_semi": -0.10851781986537119,
+    "hi_ponti_semi": -0.04259582664058123
+   },
+   "crolli": {
+    "base": 0.9,
+    "diff": -0.3,
+    "lo": -0.8,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 2
+   },
+   "sotto_ponti_302": {
+    "base": 1.1,
+    "diff": -0.6,
+    "lo": -0.9,
+    "hi": -0.3,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 6,
+    "lo_ponti_semi": -1.4999999999999998,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 11.5,
+    "diff": -7.0,
+    "lo": -11.700624999999999,
+    "hi": -2.6743749999999977,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 7,
+    "lo_ponti_semi": -19.80125,
+    "hi_ponti_semi": -0.32437499999999775
+   },
+   "sotto_ponti_330": {
+    "base": 4.0,
+    "diff": -2.8,
+    "lo": -3.9,
+    "hi": -1.8,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 9
+   },
+   "anni_sotto_330": {
+    "base": 47.0,
+    "diff": -31.575,
+    "lo": -42.475,
+    "hi": -20.623749999999994,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "sotto_ponti_366": {
+    "base": 18.1,
+    "diff": -9.2,
+    "lo": -9.9,
+    "hi": -8.5,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "anni_sotto_366": {
+    "base": 233.15,
+    "diff": -133.85,
+    "lo": -149.550625,
+    "hi": -116.574375,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "spesa": {
+    "base": 274.67144294,
+    "diff": 94.17586330800006,
+    "lo": 78.06841186580009,
+    "hi": 111.80082908394996,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 154.34695406906255,
+    "diff": -9.548474574062569,
+    "lo": -24.210083203743796,
+    "hi": 5.096733678062442,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 6
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.2,
+    "diff": 4.3,
+    "lo": 3.4,
+    "hi": 5.2,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 8008.8,
+    "lo": 7955.2,
+    "hi": 8074.81,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "princ/typical_owner/N24-D0": {
+   "S1": {
+    "base": 4.225111640313426,
+    "diff": 0.09519677552330812,
+    "lo": 0.08865887999432129,
+    "hi": 0.10204534030956633,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.08001746681224553,
+    "hi_ponti_semi": 0.11192314736247959
+   },
+   "crolli_attesi": {
+    "base": 0.1500860782596455,
+    "diff": -0.07336425139908526,
+    "lo": -0.08839807652742873,
+    "hi": -0.05764079566685346,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10,
+    "lo_ponti_semi": -0.10985195516887258,
+    "hi_ponti_semi": -0.045705105849329804
+   },
+   "crolli": {
+    "base": 0.9,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 1.1,
+    "diff": -0.7,
+    "lo": -1.2,
+    "hi": -0.3,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 5,
+    "lo_ponti_semi": -1.7999999999999998,
+    "hi_ponti_semi": -0.09999999999999999
+   },
+   "anni_sotto_302": {
+    "base": 11.5,
+    "diff": -7.95,
+    "lo": -13.800625,
+    "hi": -2.45,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 6,
+    "lo_ponti_semi": -20.950625,
+    "hi_ponti_semi": -0.7993749999999976
+   },
+   "sotto_ponti_330": {
+    "base": 4.0,
+    "diff": -2.9,
+    "lo": -4.1,
+    "hi": -1.8,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 8
+   },
+   "anni_sotto_330": {
+    "base": 47.0,
+    "diff": -32.6,
+    "lo": -47.1,
+    "hi": -19.35,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "sotto_ponti_366": {
+    "base": 18.1,
+    "diff": -9.2,
+    "lo": -10.5,
+    "hi": -7.9,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "anni_sotto_366": {
+    "base": 233.15,
+    "diff": -141.875,
+    "lo": -163.575625,
+    "hi": -120.09812499999998,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "spesa": {
+    "base": 274.67144294,
+    "diff": 90.18264412800002,
+    "lo": 76.35227257780005,
+    "hi": 105.50341890330003,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 154.34695406906255,
+    "diff": -11.03865979575004,
+    "lo": -20.7777118830032,
+    "hi": -2.944312139684487,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 8
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.2,
+    "diff": 3.1,
+    "lo": 2.3,
+    "hi": 4.0,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 3830.7,
+    "lo": 3804.4975,
+    "hi": 3854.9,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "princ/typical_owner/D1-N24": {
+   "S1": {
+    "base": 4.320308415836734,
+    "diff": 0.004618609654915851,
+    "lo": -7.29419269131126e-05,
+    "hi": 0.009671012567373688,
+    "semi": 10,
+    "positivi": 7,
+    "negativi": 3,
+    "lo_ponti_semi": -0.0054594926172995325,
+    "hi_ponti_semi": 0.015085888488733847
+   },
+   "crolli_attesi": {
+    "base": 0.07672182686056024,
+    "diff": 0.0038233207360321986,
+    "lo": -0.01194877632177745,
+    "hi": 0.016495151194176372,
+    "semi": 10,
+    "positivi": 7,
+    "negativi": 3,
+    "lo_ponti_semi": -0.024061382815527412,
+    "hi_ponti_semi": 0.026175864292130896
+   },
+   "crolli": {
+    "base": 0.8,
+    "diff": -0.2,
+    "lo": -0.6,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 0.4,
+    "diff": 0.1,
+    "lo": -0.2,
+    "hi": 0.4,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 1,
+    "lo_ponti_semi": -0.39999999999999997,
+    "hi_ponti_semi": 0.7999999999999999
+   },
+   "anni_sotto_302": {
+    "base": 3.55,
+    "diff": 0.95,
+    "lo": -4.575,
+    "hi": 5.75,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 1,
+    "lo_ponti_semi": -8.975624999999999,
+    "hi_ponti_semi": 8.9
+   },
+   "sotto_ponti_330": {
+    "base": 1.1,
+    "diff": 0.1,
+    "lo": -0.2,
+    "hi": 0.4,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 1
+   },
+   "anni_sotto_330": {
+    "base": 14.4,
+    "diff": 1.025,
+    "lo": -9.425,
+    "hi": 10.825,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 2
+   },
+   "sotto_ponti_366": {
+    "base": 8.9,
+    "diff": 0.0,
+    "lo": -0.8,
+    "hi": 0.8,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 4
+   },
+   "anni_sotto_366": {
+    "base": 91.275,
+    "diff": 8.025,
+    "lo": -7.250624999999999,
+    "hi": 23.825,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 5
+   },
+   "spesa": {
+    "base": 364.85408706799996,
+    "diff": 3.9932191800000565,
+    "lo": -7.244353330399835,
+    "hi": 15.148593274999996,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 5
+   },
+   "utenti": {
+    "base": 143.30829427331247,
+    "diff": 1.4901852216874716,
+    "lo": -9.21788652323911,
+    "hi": 12.053531214578097,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 4
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 4.3,
+    "diff": 1.2,
+    "lo": 0.7,
+    "hi": 1.8,
+    "semi": 10,
+    "positivi": 8,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 3830.7,
+    "diff": 4178.1,
+    "lo": 4115.097500000001,
+    "hi": 4240.705,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "princ/worst_first/D1-D0": {
+   "S1": {
+    "base": 4.619360126931372,
+    "diff": 0.01562644493615526,
+    "lo": 0.013179810583442402,
+    "hi": 0.018129188721626242,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.009817909545004035,
+    "hi_ponti_semi": 0.023244335503274774
+   },
+   "crolli_attesi": {
+    "base": 0.006034772125851673,
+    "diff": -0.0015892758958864106,
+    "lo": -0.0030446715537786884,
+    "hi": -0.0004259067403778596,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10,
+    "lo_ponti_semi": -0.004847376384972719,
+    "hi_ponti_semi": -0.0001332310689890803
+   },
+   "crolli": {
+    "base": 0.7,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "sotto_ponti_330": {
+    "base": 0.1,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_330": {
+    "base": 0.75,
+    "diff": -0.6,
+    "lo": -1.8,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_366": {
+    "base": 1.2,
+    "diff": -0.3,
+    "lo": -0.6,
+    "hi": -0.1,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 3
+   },
+   "anni_sotto_366": {
+    "base": 5.4,
+    "diff": -3.35,
+    "lo": -8.675,
+    "hi": 0.025,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 4
+   },
+   "spesa": {
+    "base": 266.65402811800004,
+    "diff": 138.34945354100003,
+    "lo": 128.80411274424986,
+    "hi": 147.43103068720015,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 61.522745327250036,
+    "diff": -0.38165569368750096,
+    "lo": -1.2229030998203443,
+    "hi": 0.351706426250017,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 4
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.4,
+    "diff": 3.3,
+    "lo": 2.6,
+    "hi": 3.9,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 4476.3,
+    "lo": 4459.2,
+    "hi": 4493.7,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "princ/worst_first/N24-D0": {
+   "S1": {
+    "base": 4.619360126931372,
+    "diff": 0.014216042384277738,
+    "lo": 0.011572328651937998,
+    "hi": 0.016805107705118227,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.008468120070188384,
+    "hi_ponti_semi": 0.021180058975275116
+   },
+   "crolli_attesi": {
+    "base": 0.006034772125851673,
+    "diff": -0.0015999642671192694,
+    "lo": -0.003053191210856749,
+    "hi": -0.0004804757794301733,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10,
+    "lo_ponti_semi": -0.004936039796292872,
+    "hi_ponti_semi": -0.0001387339361569746
+   },
+   "crolli": {
+    "base": 0.7,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "sotto_ponti_330": {
+    "base": 0.1,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_330": {
+    "base": 0.75,
+    "diff": -0.6,
+    "lo": -1.8,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_366": {
+    "base": 1.2,
+    "diff": -0.2,
+    "lo": -0.5,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 2
+   },
+   "anni_sotto_366": {
+    "base": 5.4,
+    "diff": -3.225,
+    "lo": -7.875,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 1,
+    "negativi": 4
+   },
+   "spesa": {
+    "base": 266.65402811800004,
+    "diff": 129.29025030700006,
+    "lo": 122.82473594435015,
+    "hi": 135.42721174920004,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 61.522745327250036,
+    "diff": -4.545215233374995,
+    "lo": -13.077435238903123,
+    "hi": 0.23338162962501344,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 4
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.4,
+    "diff": 2.1,
+    "lo": 1.3,
+    "hi": 2.9,
+    "semi": 10,
+    "positivi": 9,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 2899.9,
+    "lo": 2892.8,
+    "hi": 2907.1,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "princ/worst_first/D1-N24": {
+   "S1": {
+    "base": 4.633576169315651,
+    "diff": 0.001410402551877521,
+    "lo": -0.0013979729421391984,
+    "hi": 0.00430516010067178,
+    "semi": 10,
+    "positivi": 7,
+    "negativi": 3,
+    "lo_ponti_semi": -0.0018867477247866379,
+    "hi_ponti_semi": 0.005201414639465258
+   },
+   "crolli_attesi": {
+    "base": 0.004434807858732404,
+    "diff": 1.0688371232858707e-05,
+    "lo": -7.487619558461666e-05,
+    "hi": 9.657453469030547e-05,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 5,
+    "lo_ponti_semi": -0.00019449320115885125,
+    "hi_ponti_semi": 0.00023499092198873574
+   },
+   "crolli": {
+    "base": 0.6,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "sotto_ponti_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "sotto_ponti_330": {
+    "base": 0.1,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_330": {
+    "base": 0.15,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "sotto_ponti_366": {
+    "base": 1.0,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "anni_sotto_366": {
+    "base": 2.175,
+    "diff": -0.125,
+    "lo": -0.65,
+    "hi": 0.45,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 3
+   },
+   "spesa": {
+    "base": 395.94427842500005,
+    "diff": 9.059203233999966,
+    "lo": -2.0334704546002107,
+    "hi": 19.33738215447495,
+    "semi": 10,
+    "positivi": 7,
+    "negativi": 3
+   },
+   "utenti": {
+    "base": 56.977530093875046,
+    "diff": 4.163559539687493,
+    "lo": -0.4199505355625103,
+    "hi": 12.706652796437487,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 2
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 3.5,
+    "diff": 1.2,
+    "lo": 0.4,
+    "hi": 2.0,
+    "semi": 10,
+    "positivi": 6,
+    "negativi": 1
+   },
+   "isp_imposte": {
+    "base": 2899.9,
+    "diff": 1576.4,
+    "lo": 1560.1,
+    "hi": 1593.2,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "off/do_nothing/D1-D0": {
+   "S1": {
+    "base": 3.831229793745295,
+    "diff": -0.00010311931027633392,
+    "lo": -0.0001377002616131051,
+    "hi": -6.852562354126567e-05,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10,
+    "lo_ponti_semi": -0.00018735960477145373,
+    "hi_ponti_semi": -4.3825178476090706e-05
+   },
+   "crolli_attesi": {
+    "base": 0.5281205102044406,
+    "diff": 0.0054410480530923235,
+    "lo": 0.004795460849424418,
+    "hi": 0.006078799466741414,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.003833254249882644,
+    "hi_ponti_semi": 0.006830798132687933
+   },
+   "crolli": {
+    "base": 1.1,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "sotto_ponti_302": {
+    "base": 4.7,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 46.075,
+    "diff": 0.6,
+    "lo": 0.3,
+    "hi": 0.925,
+    "semi": 10,
+    "positivi": 8,
+    "negativi": 1,
+    "lo_ponti_semi": -0.024999999999999998,
+    "hi_ponti_semi": 1.4000000000000001
+   },
+   "sotto_ponti_330": {
+    "base": 20.2,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_330": {
+    "base": 225.45,
+    "diff": 3.275,
+    "lo": 2.6,
+    "hi": 3.875,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "sotto_ponti_366": {
+    "base": 56.6,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_366": {
+    "base": 927.825,
+    "diff": 11.075,
+    "lo": 9.9,
+    "hi": 12.25,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "spesa": {
+    "base": 0.0,
+    "diff": 8.722366223999996,
+    "lo": 8.704564705999996,
+    "hi": 8.736942490400002,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 202.74601909837497,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 9613.3,
+    "lo": 9604.3,
+    "hi": 9622.4,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "off/do_nothing/N24-D0": {
+   "S1": {
+    "base": 3.831229793745295,
+    "diff": -7.106913096666112e-05,
+    "lo": -0.00010192695689278053,
+    "hi": -4.1939962726970084e-05,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 9,
+    "lo_ponti_semi": -0.00014456437438008603,
+    "hi_ponti_semi": -2.0217234009981582e-05
+   },
+   "crolli_attesi": {
+    "base": 0.5281205102044406,
+    "diff": 0.0032709573498874377,
+    "lo": 0.0029136912098824577,
+    "hi": 0.003729588967649661,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.00248313469686204,
+    "hi_ponti_semi": 0.004209562069454664
+   },
+   "crolli": {
+    "base": 1.1,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "sotto_ponti_302": {
+    "base": 4.7,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 46.075,
+    "diff": 0.35,
+    "lo": -0.025,
+    "hi": 0.75,
+    "semi": 10,
+    "positivi": 6,
+    "negativi": 2,
+    "lo_ponti_semi": -0.27499999999999997,
+    "hi_ponti_semi": 1.025
+   },
+   "sotto_ponti_330": {
+    "base": 20.2,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_330": {
+    "base": 225.45,
+    "diff": 1.625,
+    "lo": 1.2,
+    "hi": 2.125,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "sotto_ponti_366": {
+    "base": 56.6,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_366": {
+    "base": 927.825,
+    "diff": 6.75,
+    "lo": 6.0,
+    "hi": 7.45,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "spesa": {
+    "base": 0.0,
+    "diff": 4.662385144000001,
+    "lo": 4.64796802205,
+    "hi": 4.675710755000001,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 202.74601909837497,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 5112.8,
+    "lo": 5103.4975,
+    "hi": 5124.1,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "off/do_nothing/D1-N24": {
+   "S1": {
+    "base": 3.831158724614329,
+    "diff": -3.20501793096728e-05,
+    "lo": -6.739077414497308e-05,
+    "hi": 3.7695481800503823e-06,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 6,
+    "lo_ponti_semi": -0.00010788359381095628,
+    "hi_ponti_semi": 2.9006770627150007e-05
+   },
+   "crolli_attesi": {
+    "base": 0.5313914675543281,
+    "diff": 0.0021700907032048853,
+    "lo": 0.0012047579887953287,
+    "hi": 0.002909964336534015,
+    "semi": 10,
+    "positivi": 9,
+    "negativi": 1,
+    "lo_ponti_semi": 0.0005352071266194442,
+    "hi_ponti_semi": 0.003285053611281941
+   },
+   "crolli": {
+    "base": 1.1,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "sotto_ponti_302": {
+    "base": 4.7,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 46.425,
+    "diff": 0.25,
+    "lo": -0.075,
+    "hi": 0.6,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 3,
+    "lo_ponti_semi": -0.30000000000000004,
+    "hi_ponti_semi": 0.95
+   },
+   "sotto_ponti_330": {
+    "base": 20.2,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_330": {
+    "base": 227.075,
+    "diff": 1.65,
+    "lo": 1.15,
+    "hi": 2.225,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "sotto_ponti_366": {
+    "base": 56.6,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_366": {
+    "base": 934.575,
+    "diff": 4.325,
+    "lo": 2.75,
+    "hi": 5.875,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "spesa": {
+    "base": 4.662385144000001,
+    "diff": 4.059981079999998,
+    "lo": 4.04099166875,
+    "hi": 4.0789481842999935,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 202.74601909837497,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 5112.8,
+    "diff": 4500.5,
+    "lo": 4487.8,
+    "hi": 4510.6,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "off/typical_owner/D1-D0": {
+   "S1": {
+    "base": 4.223744027802779,
+    "diff": 0.09580396641823352,
+    "lo": 0.08877272117756844,
+    "hi": 0.10274106075355832,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.07951850840221185,
+    "hi_ponti_semi": 0.1126893971904073
+   },
+   "crolli_attesi": {
+    "base": 0.14981870646064793,
+    "diff": -0.06756136724443354,
+    "lo": -0.08009446518839924,
+    "hi": -0.05475089717129706,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10,
+    "lo_ponti_semi": -0.10152150036915475,
+    "hi_ponti_semi": -0.04084199859707238
+   },
+   "crolli": {
+    "base": 0.9,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 1.2,
+    "diff": -0.7,
+    "lo": -1.0,
+    "hi": -0.4,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 7,
+    "lo_ponti_semi": -1.7999999999999998,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 11.75,
+    "diff": -7.25,
+    "lo": -12.1,
+    "hi": -3.075,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 8,
+    "lo_ponti_semi": -19.951249999999998,
+    "hi_ponti_semi": -0.44999999999999996
+   },
+   "sotto_ponti_330": {
+    "base": 4.2,
+    "diff": -2.7,
+    "lo": -3.7,
+    "hi": -1.8,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 9
+   },
+   "anni_sotto_330": {
+    "base": 45.825,
+    "diff": -28.675,
+    "lo": -38.850625,
+    "hi": -18.35,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "sotto_ponti_366": {
+    "base": 18.3,
+    "diff": -8.8,
+    "lo": -9.5,
+    "hi": -8.1,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "anni_sotto_366": {
+    "base": 233.7,
+    "diff": -130.95,
+    "lo": -146.175,
+    "hi": -115.374375,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "spesa": {
+    "base": 276.65614003999997,
+    "diff": 92.58650937900003,
+    "lo": 76.21315550805008,
+    "hi": 111.45722792240001,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 154.34695406906255,
+    "diff": -9.548474574062569,
+    "lo": -24.730256463017252,
+    "hi": 5.121314883428047,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 6
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 8008.3,
+    "lo": 7950.297500000001,
+    "hi": 8073.4,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "off/typical_owner/N24-D0": {
+   "S1": {
+    "base": 4.223744027802779,
+    "diff": 0.09205018248697021,
+    "lo": 0.08607795647095928,
+    "hi": 0.0984886358910871,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.07747393757901849,
+    "hi_ponti_semi": 0.10754261135088516
+   },
+   "crolli_attesi": {
+    "base": 0.14981870646064793,
+    "diff": -0.07167439400830942,
+    "lo": -0.08594097471986493,
+    "hi": -0.05635804679476319,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10,
+    "lo_ponti_semi": -0.10825433285507033,
+    "hi_ponti_semi": -0.04487624485253645
+   },
+   "crolli": {
+    "base": 0.9,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "sotto_ponti_302": {
+    "base": 1.2,
+    "diff": -0.8,
+    "lo": -1.3,
+    "hi": -0.4,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 6,
+    "lo_ponti_semi": -2.0,
+    "hi_ponti_semi": -0.09999999999999999
+   },
+   "anni_sotto_302": {
+    "base": 11.75,
+    "diff": -8.2,
+    "lo": -14.225624999999999,
+    "hi": -3.2,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 7,
+    "lo_ponti_semi": -20.505,
+    "hi_ponti_semi": -0.8493749999999977
+   },
+   "sotto_ponti_330": {
+    "base": 4.2,
+    "diff": -2.8,
+    "lo": -3.8,
+    "hi": -1.9,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 9
+   },
+   "anni_sotto_330": {
+    "base": 45.825,
+    "diff": -29.75,
+    "lo": -42.701875,
+    "hi": -17.65,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "sotto_ponti_366": {
+    "base": 18.3,
+    "diff": -9.0,
+    "lo": -10.3,
+    "hi": -7.7,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "anni_sotto_366": {
+    "base": 233.7,
+    "diff": -139.85,
+    "lo": -160.775,
+    "hi": -119.024375,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "spesa": {
+    "base": 276.65614003999997,
+    "diff": 89.976697525,
+    "lo": 75.01695737870004,
+    "hi": 105.75221413035001,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 154.34695406906255,
+    "diff": -11.03865979575004,
+    "lo": -21.182294817520283,
+    "hi": -3.1997124665109586,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 8
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 3830.6,
+    "lo": 3803.3975,
+    "hi": 3854.2,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "off/typical_owner/D1-N24": {
+   "S1": {
+    "base": 4.3157942102897495,
+    "diff": 0.0037537839312633105,
+    "lo": -0.0011534662860712007,
+    "hi": 0.008939209533544865,
+    "semi": 10,
+    "positivi": 7,
+    "negativi": 3,
+    "lo_ponti_semi": -0.005919833684425646,
+    "hi_ponti_semi": 0.01432542498434315
+   },
+   "crolli_attesi": {
+    "base": 0.07814431245233852,
+    "diff": 0.004113026763875894,
+    "lo": -0.011221195725774855,
+    "hi": 0.016532646327992923,
+    "semi": 10,
+    "positivi": 7,
+    "negativi": 3,
+    "lo_ponti_semi": -0.02393110576904947,
+    "hi_ponti_semi": 0.0260062775646032
+   },
+   "crolli": {
+    "base": 0.9,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 0.4,
+    "diff": 0.1,
+    "lo": -0.2,
+    "hi": 0.4,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 1,
+    "lo_ponti_semi": -0.39999999999999997,
+    "hi_ponti_semi": 0.7999999999999999
+   },
+   "anni_sotto_302": {
+    "base": 3.55,
+    "diff": 0.95,
+    "lo": -4.4,
+    "hi": 5.575,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 1,
+    "lo_ponti_semi": -10.100624999999999,
+    "hi_ponti_semi": 8.850625000000003
+   },
+   "sotto_ponti_330": {
+    "base": 1.4,
+    "diff": 0.1,
+    "lo": -0.2,
+    "hi": 0.4,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 1
+   },
+   "anni_sotto_330": {
+    "base": 16.075,
+    "diff": 1.075,
+    "lo": -9.45,
+    "hi": 11.3,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 2
+   },
+   "sotto_ponti_366": {
+    "base": 9.3,
+    "diff": 0.2,
+    "lo": -0.7,
+    "hi": 1.1,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 4
+   },
+   "anni_sotto_366": {
+    "base": 93.85,
+    "diff": 8.9,
+    "lo": -6.153749999999999,
+    "hi": 23.95,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 4
+   },
+   "spesa": {
+    "base": 366.63283756499993,
+    "diff": 2.60981185400002,
+    "lo": -7.780312238724897,
+    "hi": 13.025734276949896,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 5
+   },
+   "utenti": {
+    "base": 143.30829427331247,
+    "diff": 1.4901852216874716,
+    "lo": -9.381986214300042,
+    "hi": 11.808044215321747,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 4
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 3830.6,
+    "diff": 4177.7,
+    "lo": 4114.0,
+    "hi": 4243.7074999999995,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "off/worst_first/D1-D0": {
+   "S1": {
+    "base": 4.619595127969097,
+    "diff": 0.01356763420291367,
+    "lo": 0.010899143203607478,
+    "hi": 0.016121245054527118,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.007629348459520736,
+    "hi_ponti_semi": 0.020752323797737702
+   },
+   "crolli_attesi": {
+    "base": 0.006012722353343036,
+    "diff": -0.0015922553714123322,
+    "lo": -0.003093662887074862,
+    "hi": -0.0004450968589104927,
+    "semi": 10,
+    "positivi": 1,
+    "negativi": 9,
+    "lo_ponti_semi": -0.004789891343892914,
+    "hi_ponti_semi": -0.000142017370199442
+   },
+   "crolli": {
+    "base": 0.7,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "sotto_ponti_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "sotto_ponti_330": {
+    "base": 0.1,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_330": {
+    "base": 0.75,
+    "diff": -0.6,
+    "lo": -1.8,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_366": {
+    "base": 1.2,
+    "diff": -0.3,
+    "lo": -0.6,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 3
+   },
+   "anni_sotto_366": {
+    "base": 5.425,
+    "diff": -3.375,
+    "lo": -8.550625,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 4
+   },
+   "spesa": {
+    "base": 269.31505446600005,
+    "diff": 143.024413362,
+    "lo": 136.4437027339999,
+    "hi": 150.09691571545005,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 61.49757596293754,
+    "diff": 2.4269730927499764,
+    "lo": -0.8881548752656385,
+    "hi": 8.12420290474994,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 2
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 4474.3,
+    "lo": 4461.7,
+    "hi": 4488.9,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "off/worst_first/N24-D0": {
+   "S1": {
+    "base": 4.619595127969097,
+    "diff": 0.01404676823507769,
+    "lo": 0.011746095676612882,
+    "hi": 0.016119754848839745,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.008334899975190557,
+    "hi_ponti_semi": 0.02102851953206693
+   },
+   "crolli_attesi": {
+    "base": 0.006012722353343036,
+    "diff": -0.0015892676860543187,
+    "lo": -0.0030317505435315593,
+    "hi": -0.0004282343026258384,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10,
+    "lo_ponti_semi": -0.004817083391884471,
+    "hi_ponti_semi": -0.00014129796737932297
+   },
+   "crolli": {
+    "base": 0.7,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "sotto_ponti_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "sotto_ponti_330": {
+    "base": 0.1,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_330": {
+    "base": 0.75,
+    "diff": -0.6,
+    "lo": -1.8,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_366": {
+    "base": 1.2,
+    "diff": -0.2,
+    "lo": -0.5,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 2
+   },
+   "anni_sotto_366": {
+    "base": 5.425,
+    "diff": -3.25,
+    "lo": -7.725,
+    "hi": -0.05,
+    "semi": 10,
+    "positivi": 1,
+    "negativi": 4
+   },
+   "spesa": {
+    "base": 269.31505446600005,
+    "diff": 131.71842055500005,
+    "lo": 122.37564160527494,
+    "hi": 138.45260597475018,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 61.49757596293754,
+    "diff": -4.5200458690624945,
+    "lo": -13.068571926451563,
+    "hi": 0.26480369487501215,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 4
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 2894.0,
+    "lo": 2885.0,
+    "hi": 2903.0,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "off/worst_first/D1-N24": {
+   "S1": {
+    "base": 4.633641896204174,
+    "diff": -0.00047913403216401915,
+    "lo": -0.0033694453720597584,
+    "hi": 0.0024393728057935204,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 5,
+    "lo_ponti_semi": -0.004122048576384241,
+    "hi_ponti_semi": 0.0029094141778346558
+   },
+   "crolli_attesi": {
+    "base": 0.004423454667288718,
+    "diff": -2.9876853580135252e-06,
+    "lo": -9.927529984763289e-05,
+    "hi": 8.35129205649246e-05,
+    "semi": 10,
+    "positivi": 6,
+    "negativi": 4,
+    "lo_ponti_semi": -0.00021075826814171471,
+    "hi_ponti_semi": 0.0002161795067748887
+   },
+   "crolli": {
+    "base": 0.7,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "sotto_ponti_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "sotto_ponti_330": {
+    "base": 0.1,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_330": {
+    "base": 0.15,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "sotto_ponti_366": {
+    "base": 1.0,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "anni_sotto_366": {
+    "base": 2.175,
+    "diff": -0.125,
+    "lo": -0.65,
+    "hi": 0.4506250000000023,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 3
+   },
+   "spesa": {
+    "base": 401.0334750210001,
+    "diff": 11.305992806999962,
+    "lo": 2.7375801997249822,
+    "hi": 20.73894615262517,
+    "semi": 10,
+    "positivi": 7,
+    "negativi": 3
+   },
+   "utenti": {
+    "base": 56.977530093875046,
+    "diff": 6.9470189618124705,
+    "lo": -0.0494998582500024,
+    "hi": 16.734836769812425,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 2
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 2894.0,
+    "diff": 1580.3,
+    "lo": 1568.5,
+    "hi": 1593.2025,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "markov/do_nothing/D1-D0": {
+   "S1": {
+    "base": 3.514442606223567,
+    "diff": 0.007493675746187156,
+    "lo": 0.004920082027225971,
+    "hi": 0.010105343623189118,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0025591913589711637,
+    "hi_ponti_semi": 0.014000390494196298
+   },
+   "crolli_attesi": {
+    "base": 2.835388903064275,
+    "diff": -0.0569098922867445,
+    "lo": -0.1298857932328452,
+    "hi": -0.004285922924008423,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 6,
+    "lo_ponti_semi": -0.16869416442357377,
+    "hi_ponti_semi": 0.00807142415300448
+   },
+   "crolli": {
+    "base": 3.8,
+    "diff": -0.1,
+    "lo": -0.4,
+    "hi": 0.2,
+    "semi": 10,
+    "positivi": 1,
+    "negativi": 2
+   },
+   "sotto_ponti_302": {
+    "base": 36.5,
+    "diff": -0.5,
+    "lo": -0.9,
+    "hi": -0.1,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 4,
+    "lo_ponti_semi": -1.4999999999999998,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 626.95,
+    "diff": -3.875,
+    "lo": -17.226875,
+    "hi": 5.4,
+    "semi": 10,
+    "positivi": 8,
+    "negativi": 2,
+    "lo_ponti_semi": -26.775,
+    "hi_ponti_semi": 7.875
+   },
+   "sotto_ponti_330": {
+    "base": 62.6,
+    "diff": -1.0,
+    "lo": -1.5,
+    "hi": -0.6,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 8
+   },
+   "anni_sotto_330": {
+    "base": 1190.275,
+    "diff": -12.85,
+    "lo": -30.450625,
+    "hi": 0.7,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 6
+   },
+   "sotto_ponti_366": {
+    "base": 91.7,
+    "diff": -0.7,
+    "lo": -1.2,
+    "hi": -0.2,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 5
+   },
+   "anni_sotto_366": {
+    "base": 2036.675,
+    "diff": -2.525,
+    "lo": -18.378124999999997,
+    "hi": 11.375,
+    "semi": 10,
+    "positivi": 6,
+    "negativi": 4
+   },
+   "spesa": {
+    "base": 0.4751055,
+    "diff": 10.217800262999999,
+    "lo": 9.733622839800002,
+    "hi": 10.757792639574996,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 217.23744291337488,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.0,
+    "diff": 7.4,
+    "lo": 5.2,
+    "hi": 9.9,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 9644.5,
+    "lo": 9636.8,
+    "hi": 9652.9,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "markov/worst_first/D1-D0": {
+   "S1": {
+    "base": 4.401213086708902,
+    "diff": 0.17313829920735033,
+    "lo": 0.16252250897182138,
+    "hi": 0.18432398357874424,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.14518949099403608,
+    "hi_ponti_semi": 0.20205714866033392
+   },
+   "crolli_attesi": {
+    "base": 0.04435684147411014,
+    "diff": -0.038770570496117075,
+    "lo": -0.05281784350500366,
+    "hi": -0.02587833046552053,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10,
+    "lo_ponti_semi": -0.06785846934411757,
+    "hi_ponti_semi": -0.021318913754162977
+   },
+   "crolli": {
+    "base": 0.7,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 1.0,
+    "diff": -1.0,
+    "lo": -1.6,
+    "hi": -0.5,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 7,
+    "lo_ponti_semi": -2.1999999999999997,
+    "hi_ponti_semi": -0.19999999999999998
+   },
+   "anni_sotto_302": {
+    "base": 4.05,
+    "diff": -4.05,
+    "lo": -8.400625,
+    "hi": -0.7243749999999977,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 7,
+    "lo_ponti_semi": -14.025625,
+    "hi_ponti_semi": -0.09999999999999999
+   },
+   "sotto_ponti_330": {
+    "base": 2.9,
+    "diff": -2.7,
+    "lo": -3.5,
+    "hi": -2.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "anni_sotto_330": {
+    "base": 17.4,
+    "diff": -17.1,
+    "lo": -25.12625,
+    "hi": -8.975,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "sotto_ponti_366": {
+    "base": 7.1,
+    "diff": -5.9,
+    "lo": -7.6,
+    "hi": -4.5,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "anni_sotto_366": {
+    "base": 49.375,
+    "diff": -46.75,
+    "lo": -66.87625,
+    "hi": -27.547499999999992,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 10
+   },
+   "spesa": {
+    "base": 287.81248838999994,
+    "diff": 411.7007493980001,
+    "lo": 407.500907329375,
+    "hi": 415.6122333279999,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 89.89024732756249,
+    "diff": -23.365299275312502,
+    "lo": -34.646281687876574,
+    "hi": -13.227452296476573,
+    "semi": 10,
+    "positivi": 1,
+    "negativi": 9
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.5,
+    "diff": 3.2,
+    "lo": 2.2,
+    "hi": 4.0,
+    "semi": 10,
+    "positivi": 9,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 4777.1,
+    "lo": 4742.5,
+    "hi": 4809.5025,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "potenza/do_nothing/D1-D0": {
+   "S1": {
+    "base": 3.1310575538947747,
+    "diff": 0.006739122592254576,
+    "lo": 0.0054664415169306535,
+    "hi": 0.008268962526800943,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.003275566164420921,
+    "hi_ponti_semi": 0.01143498667450063
+   },
+   "crolli_attesi": {
+    "base": 5.174854503189543,
+    "diff": -0.11787696304087225,
+    "lo": -0.1946049838396941,
+    "hi": -0.04869301496634417,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 8,
+    "lo_ponti_semi": -0.26932794516298986,
+    "hi_ponti_semi": -0.0151735586181053
+   },
+   "crolli": {
+    "base": 6.0,
+    "diff": -0.1,
+    "lo": -0.5,
+    "hi": 0.3,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 3
+   },
+   "sotto_ponti_302": {
+    "base": 74.5,
+    "diff": -0.6,
+    "lo": -1.0,
+    "hi": -0.2,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 5,
+    "lo_ponti_semi": -1.5999999999999999,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 1144.125,
+    "diff": -9.0,
+    "lo": -19.425625,
+    "hi": 0.525,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 6,
+    "lo_ponti_semi": -29.350624999999997,
+    "hi_ponti_semi": 6.725
+   },
+   "sotto_ponti_330": {
+    "base": 101.5,
+    "diff": -0.3,
+    "lo": -0.6,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 3
+   },
+   "anni_sotto_330": {
+    "base": 1886.925,
+    "diff": 2.025,
+    "lo": -4.45,
+    "hi": 7.451250000000004,
+    "semi": 10,
+    "positivi": 6,
+    "negativi": 3
+   },
+   "sotto_ponti_366": {
+    "base": 122.0,
+    "diff": -0.4,
+    "lo": -0.7,
+    "hi": -0.1,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 4
+   },
+   "anni_sotto_366": {
+    "base": 2820.7,
+    "diff": 2.35,
+    "lo": -3.150625,
+    "hi": 8.575,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 5
+   },
+   "spesa": {
+    "base": 0.4751055,
+    "diff": 12.581283909999996,
+    "lo": 11.611828352049994,
+    "hi": 13.566528724049997,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 228.14836911131243,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.0,
+    "diff": 20.4,
+    "lo": 16.4,
+    "hi": 24.7,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 9574.2,
+    "lo": 9555.9,
+    "hi": 9588.9,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "potenza/worst_first/D1-D0": {
+   "S1": {
+    "base": 4.568559362178464,
+    "diff": 0.030322055215428367,
+    "lo": 0.025735332574944477,
+    "hi": 0.03512534809836394,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0211102110401925,
+    "hi_ponti_semi": 0.04110196700591297
+   },
+   "crolli_attesi": {
+    "base": 0.011688133630538633,
+    "diff": -0.006751570062621915,
+    "lo": -0.015288701096267674,
+    "hi": -0.001495718646497491,
+    "semi": 10,
+    "positivi": 1,
+    "negativi": 9,
+    "lo_ponti_semi": -0.025919566868509113,
+    "hi_ponti_semi": -0.0004315676273776727
+   },
+   "crolli": {
+    "base": 0.7,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 0.1,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1,
+    "lo_ponti_semi": -0.6000000000000001,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 2.025,
+    "diff": -2.025,
+    "lo": -6.075,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1,
+    "lo_ponti_semi": -12.15,
+    "hi_ponti_semi": 0.0
+   },
+   "sotto_ponti_330": {
+    "base": 0.6,
+    "diff": -0.5,
+    "lo": -0.8,
+    "hi": -0.2,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 5
+   },
+   "anni_sotto_330": {
+    "base": 4.5,
+    "diff": -4.35,
+    "lo": -9.650625,
+    "hi": -0.6493749999999977,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 6
+   },
+   "sotto_ponti_366": {
+    "base": 1.5,
+    "diff": -0.5,
+    "lo": -0.8,
+    "hi": -0.2,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 5
+   },
+   "anni_sotto_366": {
+    "base": 10.15,
+    "diff": -8.0,
+    "lo": -14.225624999999999,
+    "hi": -2.65,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 6
+   },
+   "spesa": {
+    "base": 273.03396351,
+    "diff": 145.56374706200003,
+    "lo": 138.21460429952506,
+    "hi": 153.80416741467496,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 64.59982522618756,
+    "diff": 2.1471537860624843,
+    "lo": -1.203473801017229,
+    "hi": 7.061451647550019,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 5
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.3,
+    "diff": 2.9,
+    "lo": 2.2,
+    "hi": 3.5,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 4508.0,
+    "lo": 4488.6,
+    "hi": 4523.6,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "gamma/do_nothing/D1-D0": {
+   "S1": {
+    "base": 3.8190878321364843,
+    "diff": 0.00867850463172135,
+    "lo": 0.006597193875157895,
+    "hi": 0.011134434263112522,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.003911173572187386,
+    "hi_ponti_semi": 0.014752374520982825
+   },
+   "crolli_attesi": {
+    "base": 0.6442243723544566,
+    "diff": -0.012390496597989974,
+    "lo": -0.02789463048359964,
+    "hi": -0.0005092426108437605,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 7,
+    "lo_ponti_semi": -0.0393002844069349,
+    "hi_ponti_semi": 0.004991199294012002
+   },
+   "crolli": {
+    "base": 1.0,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 5.5,
+    "diff": -0.5,
+    "lo": -0.9,
+    "hi": -0.1,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 4,
+    "lo_ponti_semi": -1.4000000000000001,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 66.875,
+    "diff": -5.125,
+    "lo": -11.101249999999999,
+    "hi": 0.225,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 5,
+    "lo_ponti_semi": -17.900624999999998,
+    "hi_ponti_semi": 2.1
+   },
+   "sotto_ponti_330": {
+    "base": 19.6,
+    "diff": -1.4,
+    "lo": -2.2,
+    "hi": -0.7,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 8
+   },
+   "anni_sotto_330": {
+    "base": 256.275,
+    "diff": -12.7,
+    "lo": -26.650624999999998,
+    "hi": -1.9993749999999977,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 6
+   },
+   "sotto_ponti_366": {
+    "base": 57.2,
+    "diff": -1.0,
+    "lo": -1.4,
+    "hi": -0.6,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 8
+   },
+   "anni_sotto_366": {
+    "base": 993.9,
+    "diff": -9.725,
+    "lo": -22.100625,
+    "hi": 1.65,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 6
+   },
+   "spesa": {
+    "base": 0.4751055,
+    "diff": 9.709446753999998,
+    "lo": 9.293418418450004,
+    "hi": 10.182990676574997,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 201.08162692306252,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.0,
+    "diff": 4.2,
+    "lo": 3.1,
+    "hi": 5.5,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 9620.6,
+    "lo": 9607.9975,
+    "hi": 9631.9,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  },
+  "gamma/worst_first/D1-D0": {
+   "S1": {
+    "base": 4.614244700937678,
+    "diff": 0.01623175689173042,
+    "lo": 0.01249536771233994,
+    "hi": 0.019973747755027058,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.008711387884094306,
+    "hi_ponti_semi": 0.025567544898953267
+   },
+   "crolli_attesi": {
+    "base": 0.006360500901595812,
+    "diff": -0.0018611061614663305,
+    "lo": -0.003718994106217693,
+    "hi": -0.0005161939362708645,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 8,
+    "lo_ponti_semi": -0.005490968367012716,
+    "hi_ponti_semi": -0.00017948395641114966
+   },
+   "crolli": {
+    "base": 0.7,
+    "diff": -0.1,
+    "lo": -0.3,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "anni_sotto_302": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0,
+    "hi_ponti_semi": 0.0
+   },
+   "sotto_ponti_330": {
+    "base": 0.1,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "anni_sotto_330": {
+    "base": 0.425,
+    "diff": -0.275,
+    "lo": -0.825,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 1
+   },
+   "sotto_ponti_366": {
+    "base": 1.1,
+    "diff": -0.2,
+    "lo": -0.5,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 2
+   },
+   "anni_sotto_366": {
+    "base": 6.3,
+    "diff": -4.35,
+    "lo": -10.250625,
+    "hi": -0.15,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 4
+   },
+   "spesa": {
+    "base": 270.668850698,
+    "diff": 142.42236087399993,
+    "lo": 134.38627742199992,
+    "hi": 150.29606393307503,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "utenti": {
+    "base": 54.028210446875036,
+    "diff": 7.51883714612502,
+    "lo": 0.3409700922312415,
+    "hi": 16.331496670446928,
+    "semi": 10,
+    "positivi": 6,
+    "negativi": 2
+   },
+   "q_chiusi": {
+    "base": 0.0,
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "semi": 10,
+    "positivi": 0,
+    "negativi": 0
+   },
+   "floor_interv": {
+    "base": 1.5,
+    "diff": 3.0,
+    "lo": 2.3,
+    "hi": 3.7,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   },
+   "isp_imposte": {
+    "base": 0.0,
+    "diff": 4478.3,
+    "lo": 4456.6,
+    "hi": 4498.8,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0
+   }
+  }
+ },
+ "medie": {
+  "princ": [
+   {
+    "gestore": "do_nothing",
+    "legge": "D0",
+    "S1": 3.833,
+    "crolli_attesi": 0.5218,
+    "crolli": 1.1,
+    "sotto_ponti_302": 4.4,
+    "anni_sotto_302": 43.45,
+    "sotto_ponti_330": 20.0,
+    "anni_sotto_330": 220.95,
+    "sotto_ponti_366": 56.5,
+    "anni_sotto_366": 923.525,
+    "spesa": 0.4751,
+    "utenti": 202.746,
+    "q_chiusi": 0.0,
+    "floor_interv": 1.0,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "do_nothing",
+    "legge": "D1",
+    "S1": 3.8418,
+    "crolli_attesi": 0.5129,
+    "crolli": 1.0,
+    "sotto_ponti_302": 3.8,
+    "anni_sotto_302": 42.725,
+    "sotto_ponti_330": 18.6,
+    "anni_sotto_330": 208.05,
+    "sotto_ponti_366": 55.2,
+    "anni_sotto_366": 911.6,
+    "spesa": 10.1803,
+    "utenti": 202.746,
+    "q_chiusi": 0.0,
+    "floor_interv": 5.2,
+    "isp_imposte": 9614.2
+   },
+   {
+    "gestore": "do_nothing",
+    "legge": "N24",
+    "S1": 3.8402,
+    "crolli_attesi": 0.5139,
+    "crolli": 1.0,
+    "sotto_ponti_302": 4.0,
+    "anni_sotto_302": 42.225,
+    "sotto_ponti_330": 18.8,
+    "anni_sotto_330": 210.6,
+    "sotto_ponti_366": 55.2,
+    "anni_sotto_366": 912.575,
+    "spesa": 6.461,
+    "utenti": 202.746,
+    "q_chiusi": 0.0,
+    "floor_interv": 4.7,
+    "isp_imposte": 5110.8
+   },
+   {
+    "gestore": "typical_owner",
+    "legge": "D0",
+    "S1": 4.2251,
+    "crolli_attesi": 0.1501,
+    "crolli": 0.9,
+    "sotto_ponti_302": 1.1,
+    "anni_sotto_302": 11.5,
+    "sotto_ponti_330": 4.0,
+    "anni_sotto_330": 47.0,
+    "sotto_ponti_366": 18.1,
+    "anni_sotto_366": 233.15,
+    "spesa": 274.6714,
+    "utenti": 154.347,
+    "q_chiusi": 0.0,
+    "floor_interv": 1.2,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "typical_owner",
+    "legge": "D1",
+    "S1": 4.3249,
+    "crolli_attesi": 0.0805,
+    "crolli": 0.6,
+    "sotto_ponti_302": 0.5,
+    "anni_sotto_302": 4.5,
+    "sotto_ponti_330": 1.2,
+    "anni_sotto_330": 15.425,
+    "sotto_ponti_366": 8.9,
+    "anni_sotto_366": 99.3,
+    "spesa": 368.8473,
+    "utenti": 144.7985,
+    "q_chiusi": 0.0,
+    "floor_interv": 5.5,
+    "isp_imposte": 8008.8
+   },
+   {
+    "gestore": "typical_owner",
+    "legge": "N24",
+    "S1": 4.3203,
+    "crolli_attesi": 0.0767,
+    "crolli": 0.8,
+    "sotto_ponti_302": 0.4,
+    "anni_sotto_302": 3.55,
+    "sotto_ponti_330": 1.1,
+    "anni_sotto_330": 14.4,
+    "sotto_ponti_366": 8.9,
+    "anni_sotto_366": 91.275,
+    "spesa": 364.8541,
+    "utenti": 143.3083,
+    "q_chiusi": 0.0,
+    "floor_interv": 4.3,
+    "isp_imposte": 3830.7
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "D0",
+    "S1": 4.6194,
+    "crolli_attesi": 0.006,
+    "crolli": 0.7,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.1,
+    "anni_sotto_330": 0.75,
+    "sotto_ponti_366": 1.2,
+    "anni_sotto_366": 5.4,
+    "spesa": 266.654,
+    "utenti": 61.5227,
+    "q_chiusi": 0.0,
+    "floor_interv": 1.4,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "D1",
+    "S1": 4.635,
+    "crolli_attesi": 0.0044,
+    "crolli": 0.6,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.1,
+    "anni_sotto_330": 0.15,
+    "sotto_ponti_366": 0.9,
+    "anni_sotto_366": 2.05,
+    "spesa": 405.0035,
+    "utenti": 61.1411,
+    "q_chiusi": 0.0,
+    "floor_interv": 4.7,
+    "isp_imposte": 4476.3
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "N24",
+    "S1": 4.6336,
+    "crolli_attesi": 0.0044,
+    "crolli": 0.6,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.1,
+    "anni_sotto_330": 0.15,
+    "sotto_ponti_366": 1.0,
+    "anni_sotto_366": 2.175,
+    "spesa": 395.9443,
+    "utenti": 56.9775,
+    "q_chiusi": 0.0,
+    "floor_interv": 3.5,
+    "isp_imposte": 2899.9
+   }
+  ],
+  "off": [
+   {
+    "gestore": "do_nothing",
+    "legge": "D0",
+    "S1": 3.8312,
+    "crolli_attesi": 0.5281,
+    "crolli": 1.1,
+    "sotto_ponti_302": 4.7,
+    "anni_sotto_302": 46.075,
+    "sotto_ponti_330": 20.2,
+    "anni_sotto_330": 225.45,
+    "sotto_ponti_366": 56.6,
+    "anni_sotto_366": 927.825,
+    "spesa": 0.0,
+    "utenti": 202.746,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "do_nothing",
+    "legge": "D1",
+    "S1": 3.8311,
+    "crolli_attesi": 0.5336,
+    "crolli": 1.1,
+    "sotto_ponti_302": 4.7,
+    "anni_sotto_302": 46.675,
+    "sotto_ponti_330": 20.2,
+    "anni_sotto_330": 228.725,
+    "sotto_ponti_366": 56.6,
+    "anni_sotto_366": 938.9,
+    "spesa": 8.7224,
+    "utenti": 202.746,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 9613.3
+   },
+   {
+    "gestore": "do_nothing",
+    "legge": "N24",
+    "S1": 3.8312,
+    "crolli_attesi": 0.5314,
+    "crolli": 1.1,
+    "sotto_ponti_302": 4.7,
+    "anni_sotto_302": 46.425,
+    "sotto_ponti_330": 20.2,
+    "anni_sotto_330": 227.075,
+    "sotto_ponti_366": 56.6,
+    "anni_sotto_366": 934.575,
+    "spesa": 4.6624,
+    "utenti": 202.746,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 5112.8
+   },
+   {
+    "gestore": "typical_owner",
+    "legge": "D0",
+    "S1": 4.2237,
+    "crolli_attesi": 0.1498,
+    "crolli": 0.9,
+    "sotto_ponti_302": 1.2,
+    "anni_sotto_302": 11.75,
+    "sotto_ponti_330": 4.2,
+    "anni_sotto_330": 45.825,
+    "sotto_ponti_366": 18.3,
+    "anni_sotto_366": 233.7,
+    "spesa": 276.6561,
+    "utenti": 154.347,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "typical_owner",
+    "legge": "D1",
+    "S1": 4.3195,
+    "crolli_attesi": 0.0823,
+    "crolli": 0.8,
+    "sotto_ponti_302": 0.5,
+    "anni_sotto_302": 4.5,
+    "sotto_ponti_330": 1.5,
+    "anni_sotto_330": 17.15,
+    "sotto_ponti_366": 9.5,
+    "anni_sotto_366": 102.75,
+    "spesa": 369.2426,
+    "utenti": 144.7985,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 8008.3
+   },
+   {
+    "gestore": "typical_owner",
+    "legge": "N24",
+    "S1": 4.3158,
+    "crolli_attesi": 0.0781,
+    "crolli": 0.9,
+    "sotto_ponti_302": 0.4,
+    "anni_sotto_302": 3.55,
+    "sotto_ponti_330": 1.4,
+    "anni_sotto_330": 16.075,
+    "sotto_ponti_366": 9.3,
+    "anni_sotto_366": 93.85,
+    "spesa": 366.6328,
+    "utenti": 143.3083,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 3830.6
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "D0",
+    "S1": 4.6196,
+    "crolli_attesi": 0.006,
+    "crolli": 0.7,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.1,
+    "anni_sotto_330": 0.75,
+    "sotto_ponti_366": 1.2,
+    "anni_sotto_366": 5.425,
+    "spesa": 269.3151,
+    "utenti": 61.4976,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "D1",
+    "S1": 4.6332,
+    "crolli_attesi": 0.0044,
+    "crolli": 0.7,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.1,
+    "anni_sotto_330": 0.15,
+    "sotto_ponti_366": 0.9,
+    "anni_sotto_366": 2.05,
+    "spesa": 412.3395,
+    "utenti": 63.9245,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 4474.3
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "N24",
+    "S1": 4.6336,
+    "crolli_attesi": 0.0044,
+    "crolli": 0.7,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.1,
+    "anni_sotto_330": 0.15,
+    "sotto_ponti_366": 1.0,
+    "anni_sotto_366": 2.175,
+    "spesa": 401.0335,
+    "utenti": 56.9775,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 2894.0
+   }
+  ],
+  "markov": [
+   {
+    "gestore": "do_nothing",
+    "legge": "D0",
+    "S1": 3.5144,
+    "crolli_attesi": 2.8354,
+    "crolli": 3.8,
+    "sotto_ponti_302": 36.5,
+    "anni_sotto_302": 626.95,
+    "sotto_ponti_330": 62.6,
+    "anni_sotto_330": 1190.275,
+    "sotto_ponti_366": 91.7,
+    "anni_sotto_366": 2036.675,
+    "spesa": 0.4751,
+    "utenti": 217.2374,
+    "q_chiusi": 0.0,
+    "floor_interv": 1.0,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "do_nothing",
+    "legge": "D1",
+    "S1": 3.5219,
+    "crolli_attesi": 2.7785,
+    "crolli": 3.7,
+    "sotto_ponti_302": 36.0,
+    "anni_sotto_302": 623.075,
+    "sotto_ponti_330": 61.6,
+    "anni_sotto_330": 1177.425,
+    "sotto_ponti_366": 91.0,
+    "anni_sotto_366": 2034.15,
+    "spesa": 10.6929,
+    "utenti": 217.2374,
+    "q_chiusi": 0.0,
+    "floor_interv": 8.4,
+    "isp_imposte": 9644.5
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "D0",
+    "S1": 4.4012,
+    "crolli_attesi": 0.0444,
+    "crolli": 0.7,
+    "sotto_ponti_302": 1.0,
+    "anni_sotto_302": 4.05,
+    "sotto_ponti_330": 2.9,
+    "anni_sotto_330": 17.4,
+    "sotto_ponti_366": 7.1,
+    "anni_sotto_366": 49.375,
+    "spesa": 287.8125,
+    "utenti": 89.8902,
+    "q_chiusi": 0.0,
+    "floor_interv": 1.5,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "D1",
+    "S1": 4.5744,
+    "crolli_attesi": 0.0056,
+    "crolli": 0.6,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.2,
+    "anni_sotto_330": 0.3,
+    "sotto_ponti_366": 1.2,
+    "anni_sotto_366": 2.625,
+    "spesa": 699.5132,
+    "utenti": 66.5249,
+    "q_chiusi": 0.0,
+    "floor_interv": 4.7,
+    "isp_imposte": 4777.1
+   }
+  ],
+  "potenza": [
+   {
+    "gestore": "do_nothing",
+    "legge": "D0",
+    "S1": 3.1311,
+    "crolli_attesi": 5.1749,
+    "crolli": 6.0,
+    "sotto_ponti_302": 74.5,
+    "anni_sotto_302": 1144.125,
+    "sotto_ponti_330": 101.5,
+    "anni_sotto_330": 1886.925,
+    "sotto_ponti_366": 122.0,
+    "anni_sotto_366": 2820.7,
+    "spesa": 0.4751,
+    "utenti": 228.1484,
+    "q_chiusi": 0.0,
+    "floor_interv": 1.0,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "do_nothing",
+    "legge": "D1",
+    "S1": 3.1378,
+    "crolli_attesi": 5.057,
+    "crolli": 5.9,
+    "sotto_ponti_302": 73.9,
+    "anni_sotto_302": 1135.125,
+    "sotto_ponti_330": 101.2,
+    "anni_sotto_330": 1888.95,
+    "sotto_ponti_366": 121.6,
+    "anni_sotto_366": 2823.05,
+    "spesa": 13.0564,
+    "utenti": 228.1484,
+    "q_chiusi": 0.0,
+    "floor_interv": 21.4,
+    "isp_imposte": 9574.2
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "D0",
+    "S1": 4.5686,
+    "crolli_attesi": 0.0117,
+    "crolli": 0.7,
+    "sotto_ponti_302": 0.1,
+    "anni_sotto_302": 2.025,
+    "sotto_ponti_330": 0.6,
+    "anni_sotto_330": 4.5,
+    "sotto_ponti_366": 1.5,
+    "anni_sotto_366": 10.15,
+    "spesa": 273.034,
+    "utenti": 64.5998,
+    "q_chiusi": 0.0,
+    "floor_interv": 1.3,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "D1",
+    "S1": 4.5989,
+    "crolli_attesi": 0.0049,
+    "crolli": 0.6,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.1,
+    "anni_sotto_330": 0.15,
+    "sotto_ponti_366": 1.0,
+    "anni_sotto_366": 2.15,
+    "spesa": 418.5977,
+    "utenti": 66.747,
+    "q_chiusi": 0.0,
+    "floor_interv": 4.2,
+    "isp_imposte": 4508.0
+   }
+  ],
+  "gamma": [
+   {
+    "gestore": "do_nothing",
+    "legge": "D0",
+    "S1": 3.8191,
+    "crolli_attesi": 0.6442,
+    "crolli": 1.0,
+    "sotto_ponti_302": 5.5,
+    "anni_sotto_302": 66.875,
+    "sotto_ponti_330": 19.6,
+    "anni_sotto_330": 256.275,
+    "sotto_ponti_366": 57.2,
+    "anni_sotto_366": 993.9,
+    "spesa": 0.4751,
+    "utenti": 201.0816,
+    "q_chiusi": 0.0,
+    "floor_interv": 1.0,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "do_nothing",
+    "legge": "D1",
+    "S1": 3.8278,
+    "crolli_attesi": 0.6318,
+    "crolli": 0.9,
+    "sotto_ponti_302": 5.0,
+    "anni_sotto_302": 61.75,
+    "sotto_ponti_330": 18.2,
+    "anni_sotto_330": 243.575,
+    "sotto_ponti_366": 56.2,
+    "anni_sotto_366": 984.175,
+    "spesa": 10.1846,
+    "utenti": 201.0816,
+    "q_chiusi": 0.0,
+    "floor_interv": 5.2,
+    "isp_imposte": 9620.6
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "D0",
+    "S1": 4.6142,
+    "crolli_attesi": 0.0064,
+    "crolli": 0.7,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.1,
+    "anni_sotto_330": 0.425,
+    "sotto_ponti_366": 1.1,
+    "anni_sotto_366": 6.3,
+    "spesa": 270.6689,
+    "utenti": 54.0282,
+    "q_chiusi": 0.0,
+    "floor_interv": 1.5,
+    "isp_imposte": 0.0
+   },
+   {
+    "gestore": "worst_first",
+    "legge": "D1",
+    "S1": 4.6305,
+    "crolli_attesi": 0.0045,
+    "crolli": 0.6,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.1,
+    "anni_sotto_330": 0.15,
+    "sotto_ponti_366": 0.9,
+    "anni_sotto_366": 1.95,
+    "spesa": 413.0912,
+    "utenti": 61.547,
+    "q_chiusi": 0.0,
+    "floor_interv": 4.5,
+    "isp_imposte": 4478.3
+   }
+  ]
+ },
+ "corta": {
+  "do_nothing": {
+   "medie": {
+    "S1": 4.599996643294782,
+    "crolli_attesi": 0.0013895180539279961,
+    "crolli": 0.0,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.0,
+    "anni_sotto_330": 0.0,
+    "sotto_ponti_366": 0.5,
+    "anni_sotto_366": 1.175,
+    "spesa": 0.114380703,
+    "utenti": 3.396369977125,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 175.8
+   }
+  },
+  "euristico": {
+   "medie": {
+    "S1": 4.616296819372534,
+    "crolli_attesi": 0.0008935893602791456,
+    "crolli": 0.0,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.0,
+    "anni_sotto_330": 0.0,
+    "sotto_ponti_366": 0.2,
+    "anni_sotto_366": 0.175,
+    "spesa": 17.960638373,
+    "utenti": 3.396369977125,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 0.0
+   },
+   "S1_meno_passivo": {
+    "diff": 0.01630017607775285,
+    "lo": 0.015214512191834256,
+    "hi": 0.017547442459551563,
+    "positivi": 10,
+    "semi": 10
+   },
+   "crolli_attesi_meno_passivo": {
+    "diff": -0.0004959286936488505,
+    "lo": -0.0006676205781828771,
+    "hi": -0.00034521099228957655,
+    "positivi": 0,
+    "semi": 10
+   },
+   "crolli_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_302_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_302_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_330_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_330_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_366_meno_passivo": {
+    "diff": -0.3,
+    "lo": -0.6,
+    "hi": -0.1,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_366_meno_passivo": {
+    "diff": -1.0,
+    "lo": -1.925,
+    "hi": -0.25,
+    "positivi": 0,
+    "semi": 10
+   },
+   "spesa_meno_passivo": {
+    "diff": 17.846257670000004,
+    "lo": 17.188973116725,
+    "hi": 18.444444907575,
+    "positivi": 10,
+    "semi": 10
+   },
+   "utenti_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "q_chiusi_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "floor_interv_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "isp_imposte_meno_passivo": {
+    "diff": -175.8,
+    "lo": -176.0,
+    "hi": -175.5,
+    "positivi": 0,
+    "semi": 10
+   }
+  },
+  "mcts": {
+   "medie": {
+    "S1": 4.673150872549652,
+    "crolli_attesi": 0.000669978532573201,
+    "crolli": 0.0,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.0,
+    "anni_sotto_330": 0.0,
+    "sotto_ponti_366": 0.1,
+    "anni_sotto_366": 0.225,
+    "spesa": 14.28054429045,
+    "utenti": 190.80670504091248,
+    "q_chiusi": 0.14133333333333334,
+    "floor_interv": 0.0,
+    "isp_imposte": 74.0
+   },
+   "S1_meno_passivo": {
+    "diff": 0.0731542292548701,
+    "lo": 0.06622502497019883,
+    "hi": 0.08080763084982567,
+    "positivi": 10,
+    "semi": 10
+   },
+   "crolli_attesi_meno_passivo": {
+    "diff": -0.000719539521354795,
+    "lo": -0.0008967083430336848,
+    "hi": -0.0005426025910040172,
+    "positivi": 0,
+    "semi": 10
+   },
+   "crolli_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_302_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_302_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_330_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_330_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_366_meno_passivo": {
+    "diff": -0.4,
+    "lo": -0.7,
+    "hi": -0.1,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_366_meno_passivo": {
+    "diff": -0.95,
+    "lo": -1.825,
+    "hi": -0.225,
+    "positivi": 0,
+    "semi": 10
+   },
+   "spesa_meno_passivo": {
+    "diff": 14.16616358745,
+    "lo": 13.65820050900875,
+    "hi": 14.678518502976253,
+    "positivi": 10,
+    "semi": 10
+   },
+   "utenti_meno_passivo": {
+    "diff": 187.4103350637875,
+    "lo": 154.5226451063912,
+    "hi": 224.0717721340281,
+    "positivi": 10,
+    "semi": 10
+   },
+   "q_chiusi_meno_passivo": {
+    "diff": 0.14133333333333334,
+    "lo": 0.11866666666666667,
+    "hi": 0.16733333333333333,
+    "positivi": 10,
+    "semi": 10
+   },
+   "floor_interv_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "isp_imposte_meno_passivo": {
+    "diff": -101.8,
+    "lo": -106.0,
+    "hi": -97.3975,
+    "positivi": 0,
+    "semi": 10
+   }
+  },
+  "qlearning": {
+   "medie": {
+    "S1": 4.60222655629459,
+    "crolli_attesi": 0.0013822069621683864,
+    "crolli": 0.0,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.0,
+    "anni_sotto_330": 0.0,
+    "sotto_ponti_366": 0.5,
+    "anni_sotto_366": 1.175,
+    "spesa": 2.9339711754000004,
+    "utenti": 4.3968260401000006,
+    "q_chiusi": 0.0006666666666666668,
+    "floor_interv": 0.0,
+    "isp_imposte": 172.4
+   },
+   "S1_meno_passivo": {
+    "diff": 0.002229912999808281,
+    "lo": 0.0015122699151572628,
+    "hi": 0.0029379598226317617,
+    "positivi": 10,
+    "semi": 10
+   },
+   "crolli_attesi_meno_passivo": {
+    "diff": -7.311091759609756e-06,
+    "lo": -1.5471049413778026e-05,
+    "hi": -1.1360155185258232e-06,
+    "positivi": 0,
+    "semi": 10
+   },
+   "crolli_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_302_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_302_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_330_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_330_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_366_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_366_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "spesa_meno_passivo": {
+    "diff": 2.8195904724,
+    "lo": 1.6598904412,
+    "hi": 3.9178349465149997,
+    "positivi": 10,
+    "semi": 10
+   },
+   "utenti_meno_passivo": {
+    "diff": 1.0004560629750003,
+    "lo": 0.022199947874999994,
+    "hi": 2.8641011871375013,
+    "positivi": 4,
+    "semi": 10
+   },
+   "q_chiusi_meno_passivo": {
+    "diff": 0.0006666666666666668,
+    "lo": 0.0,
+    "hi": 0.002,
+    "positivi": 1,
+    "semi": 10
+   },
+   "floor_interv_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "isp_imposte_meno_passivo": {
+    "diff": -3.4,
+    "lo": -5.2,
+    "hi": -1.7,
+    "positivi": 0,
+    "semi": 10
+   }
+  },
+  "worst_first": {
+   "medie": {
+    "S1": 4.671713537111883,
+    "crolli_attesi": 0.00031009399565142817,
+    "crolli": 0.0,
+    "sotto_ponti_302": 0.0,
+    "anni_sotto_302": 0.0,
+    "sotto_ponti_330": 0.0,
+    "anni_sotto_330": 0.0,
+    "sotto_ponti_366": 0.1,
+    "anni_sotto_366": 0.05,
+    "spesa": 16.824145605000002,
+    "utenti": 1.3047141718750002,
+    "q_chiusi": 0.0,
+    "floor_interv": 0.0,
+    "isp_imposte": 38.2
+   },
+   "S1_meno_passivo": {
+    "diff": 0.07171689381710156,
+    "lo": 0.06892849130016387,
+    "hi": 0.07473571099395866,
+    "positivi": 10,
+    "semi": 10
+   },
+   "crolli_attesi_meno_passivo": {
+    "diff": -0.0010794240582765679,
+    "lo": -0.0012931191422583474,
+    "hi": -0.0008670073752272595,
+    "positivi": 0,
+    "semi": 10
+   },
+   "crolli_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_302_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_302_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_330_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_330_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "sotto_ponti_366_meno_passivo": {
+    "diff": -0.4,
+    "lo": -0.7,
+    "hi": -0.1,
+    "positivi": 0,
+    "semi": 10
+   },
+   "anni_sotto_366_meno_passivo": {
+    "diff": -1.125,
+    "lo": -2.2,
+    "hi": -0.225,
+    "positivi": 0,
+    "semi": 10
+   },
+   "spesa_meno_passivo": {
+    "diff": 16.709764901999996,
+    "lo": 16.640135778875,
+    "hi": 16.7588616474,
+    "positivi": 10,
+    "semi": 10
+   },
+   "utenti_meno_passivo": {
+    "diff": -2.09165580525,
+    "lo": -5.353158638249999,
+    "hi": -0.010946786174998977,
+    "positivi": 0,
+    "semi": 10
+   },
+   "q_chiusi_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "floor_interv_meno_passivo": {
+    "diff": 0.0,
+    "lo": 0.0,
+    "hi": 0.0,
+    "positivi": 0,
+    "semi": 10
+   },
+   "isp_imposte_meno_passivo": {
+    "diff": -137.6,
+    "lo": -140.3,
+    "hi": -134.4,
+    "positivi": 0,
+    "semi": 10
+   }
+  }
+ },
+ "regola_passivo": {
+  "off_diff": -0.00010311931027633392,
+  "on_diff": 0.008745375941531908,
+  "off_entro_010": true,
+  "on_almeno_010": false,
+  "regge": false
+ },
+ "esempio2": {
+  "princ": {
+   "S1": {
+    "base": 3.833048243763843,
+    "diff": 0.008745375941531908,
+    "lo": 0.006502623988287459,
+    "hi": 0.011295472847464705,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.003822130380551203,
+    "hi_ponti_semi": 0.014907326331422263
+   },
+   "crolli_attesi": {
+    "base": 0.5218097781068345,
+    "diff": -0.008901567767059627,
+    "lo": -0.022058487196957646,
+    "hi": 0.00202433777956152,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 6,
+    "lo_ponti_semi": -0.03238724281401409,
+    "hi_ponti_semi": 0.010849331811907125
+   },
+   "anni_sotto_302": {
+    "base": 43.45,
+    "diff": -0.725,
+    "lo": -4.625,
+    "hi": 2.225,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 4,
+    "lo_ponti_semi": -8.625625,
+    "hi_ponti_semi": 4.7
+   },
+   "verso_9_su_10": true
+  },
+  "markov": {
+   "S1": {
+    "base": 3.514442606223567,
+    "diff": 0.007493675746187156,
+    "lo": 0.004920082027225971,
+    "hi": 0.010105343623189118,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.0025591913589711637,
+    "hi_ponti_semi": 0.014000390494196298
+   },
+   "crolli_attesi": {
+    "base": 2.835388903064275,
+    "diff": -0.0569098922867445,
+    "lo": -0.1298857932328452,
+    "hi": -0.004285922924008423,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 6,
+    "lo_ponti_semi": -0.16869416442357377,
+    "hi_ponti_semi": 0.00807142415300448
+   },
+   "anni_sotto_302": {
+    "base": 626.95,
+    "diff": -3.875,
+    "lo": -17.226875,
+    "hi": 5.4,
+    "semi": 10,
+    "positivi": 8,
+    "negativi": 2,
+    "lo_ponti_semi": -26.775,
+    "hi_ponti_semi": 7.875
+   },
+   "verso_9_su_10": true
+  },
+  "potenza": {
+   "S1": {
+    "base": 3.1310575538947747,
+    "diff": 0.006739122592254576,
+    "lo": 0.0054664415169306535,
+    "hi": 0.008268962526800943,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.003275566164420921,
+    "hi_ponti_semi": 0.01143498667450063
+   },
+   "crolli_attesi": {
+    "base": 5.174854503189543,
+    "diff": -0.11787696304087225,
+    "lo": -0.1946049838396941,
+    "hi": -0.04869301496634417,
+    "semi": 10,
+    "positivi": 2,
+    "negativi": 8,
+    "lo_ponti_semi": -0.26932794516298986,
+    "hi_ponti_semi": -0.0151735586181053
+   },
+   "anni_sotto_302": {
+    "base": 1144.125,
+    "diff": -9.0,
+    "lo": -19.425625,
+    "hi": 0.525,
+    "semi": 10,
+    "positivi": 4,
+    "negativi": 6,
+    "lo_ponti_semi": -29.350624999999997,
+    "hi_ponti_semi": 6.725
+   },
+   "verso_9_su_10": true
+  },
+  "gamma": {
+   "S1": {
+    "base": 3.8190878321364843,
+    "diff": 0.00867850463172135,
+    "lo": 0.006597193875157895,
+    "hi": 0.011134434263112522,
+    "semi": 10,
+    "positivi": 10,
+    "negativi": 0,
+    "lo_ponti_semi": 0.003911173572187386,
+    "hi_ponti_semi": 0.014752374520982825
+   },
+   "crolli_attesi": {
+    "base": 0.6442243723544566,
+    "diff": -0.012390496597989974,
+    "lo": -0.02789463048359964,
+    "hi": -0.0005092426108437605,
+    "semi": 10,
+    "positivi": 3,
+    "negativi": 7,
+    "lo_ponti_semi": -0.0393002844069349,
+    "hi_ponti_semi": 0.004991199294012002
+   },
+   "anni_sotto_302": {
+    "base": 66.875,
+    "diff": -5.125,
+    "lo": -11.101249999999999,
+    "hi": 0.225,
+    "semi": 10,
+    "positivi": 5,
+    "negativi": 5,
+    "lo_ponti_semi": -17.900624999999998,
+    "hi_ponti_semi": 2.1
+   },
+   "verso_9_su_10": true
+  }
+ }
+}
